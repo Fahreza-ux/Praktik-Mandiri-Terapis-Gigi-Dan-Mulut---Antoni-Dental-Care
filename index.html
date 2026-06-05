@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Antoni Dental Care | Terapis Gigi & Mulut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Antoni Dental Care | Klinik Terapis Gigi & Mulut</title>
     <style>
         * {
             margin: 0;
@@ -12,357 +12,347 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            background: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #ffffff;
             color: #1e293b;
             line-height: 1.5;
         }
 
-        /* Container lebar fleksibel untuk HP & PC */
+        /* Container responsive */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* === HEADER (sticky, rapih di HP) === */
+        /* ========== HEADER ========== */
         header {
             background: white;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 1px 12px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 50;
-            backdrop-filter: blur(2px);
-            background: rgba(255,255,255,0.96);
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.95);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 20px;
+            padding: 16px 24px;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 12px;
             flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .logo-area {
+        /* LOGO - TIDAK HILANG */
+        .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
         }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 50%;
             background: #0f766e;
-            border-radius: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 24px;
             font-weight: bold;
+            font-size: 22px;
+            color: white;
         }
-
+        /* fallback jika gambar tidak ada */
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
         .logo-text h1 {
-            font-size: 1.2rem;
-            line-height: 1.2;
+            font-size: 1.25rem;
+            line-height: 1.3;
             color: #0f172a;
         }
-
-        .logo-text p {
+        .logo-text span {
             font-size: 0.7rem;
             color: #0f766e;
             font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
+        /* NAVIGASI */
         nav ul {
             display: flex;
-            gap: 18px;
+            gap: 28px;
             list-style: none;
             flex-wrap: wrap;
-            justify-content: flex-end;
         }
-
         nav a {
             text-decoration: none;
-            font-size: 0.85rem;
             font-weight: 600;
+            font-size: 0.9rem;
             color: #1e293b;
             transition: 0.2s;
-            white-space: nowrap;
         }
-
         nav a:hover {
             color: #0f766e;
         }
 
-        /* === BUTTON === */
-        .btn {
+        /* ===== BUTTON ===== */
+        .btn-primary {
             display: inline-block;
             background: #0f766e;
             color: white;
-            padding: 12px 28px;
+            padding: 12px 32px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: 0.2s;
             border: none;
             cursor: pointer;
-            text-align: center;
         }
-
-        .btn:hover {
+        .btn-primary:hover {
             background: #0d5c56;
-            transform: scale(0.97);
+            transform: translateY(-2px);
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid #0f766e;
-            color: #0f766e;
-        }
-
-        /* === HERO (Senyum Sehat) === */
+        /* ===== HERO SECTION ===== */
         .hero {
-            padding: 48px 0 56px;
-            background: linear-gradient(145deg, #e6f7f5 0%, #ffffff 100%);
+            padding: 60px 0 70px;
+            background: linear-gradient(120deg, #f0fdfa 0%, #ffffff 100%);
         }
-
         .hero-grid {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 48px;
         }
-
         .hero-text h2 {
-            font-size: 2rem;
+            font-size: 2.3rem;
             line-height: 1.2;
             color: #0c4a6e;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
-
         .hero-text p {
-            font-size: 1rem;
-            margin-bottom: 28px;
-            color: #2c3e50;
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 32px;
+            max-width: 500px;
         }
-
         .hero-image {
             text-align: center;
         }
-
         .hero-image img {
             max-width: 100%;
             border-radius: 32px;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
             width: 100%;
-            max-width: 400px;
+            max-width: 460px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
         }
 
-        /* section umum */
-        section {
-            padding: 56px 0;
-        }
-
+        /* SECTION TITLE */
         .section-title {
             text-align: center;
-            font-size: 1.85rem;
-            margin-bottom: 40px;
-            color: #0c4a6e;
+            font-size: 2rem;
             font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 48px;
         }
-
-        .section-title:after {
+        .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 3px;
             background: #0f766e;
-            margin: 12px auto 0;
+            margin: 14px auto 0;
             border-radius: 4px;
         }
 
-        /* Layanan grid (2 kolom di HP, 4 di PC) */
+        /* LAYANAN GRID */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
         }
-
         .service-card {
-            background: white;
+            background: #ffffff;
             border-radius: 28px;
-            padding: 24px 16px;
+            padding: 28px 20px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            transition: all 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
             border: 1px solid #e2e8f0;
+            transition: 0.2s;
         }
-
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #ccfbf1;
+        }
         .service-icon {
             font-size: 2.8rem;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
-
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 10px;
             color: #0f172a;
         }
-
         .service-card p {
-            font-size: 0.85rem;
-            color: #334155;
+            color: #475569;
+            font-size: 0.9rem;
         }
 
-        /* Tentang */
-        .about-wrap {
+        /* TENTANG */
+        .about-wrapper {
+            background: #f8fafc;
+            border-radius: 48px;
+            padding: 48px 36px;
             display: flex;
-            flex-direction: column;
-            gap: 32px;
-            background: #f1f5f9;
-            border-radius: 40px;
-            padding: 32px 24px;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
         }
-
+        .about-text {
+            flex: 1;
+        }
         .about-text p {
             margin-bottom: 18px;
         }
-
-        .about-highlight {
-            display: inline-block;
-            background: #ccfbf1;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        .about-image img {
+            border-radius: 32px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
         }
 
-        /* Tim Terapis (horizontal scroll di HP? tapi grid lebih aman) */
+        /* TIM */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
         }
-
         .team-card {
             background: white;
             border-radius: 28px;
             overflow: hidden;
             text-align: center;
             box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+            border: 1px solid #eef2ff;
         }
-
         .team-card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
-            background: #cbd5e1;
+            background: #cbd5e6;
         }
-
         .team-card h3 {
-            margin: 18px 12px 4px;
-            font-size: 1.1rem;
+            margin: 20px 0 6px;
+            font-size: 1.2rem;
         }
-
         .team-card p {
             color: #0f766e;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        /* Kontak + Form (mobile friendly) */
+        /* KONTAK + FORM */
         .contact-flex {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 36px;
         }
-
         .contact-info, .contact-form {
             background: white;
-            padding: 28px 22px;
+            padding: 32px 28px;
             border-radius: 32px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
             border: 1px solid #e2e8f0;
+            flex: 1;
         }
-
         .contact-info p {
-            margin: 16px 0;
+            margin: 18px 0;
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
         }
-
         input, select, textarea {
             width: 100%;
-            padding: 14px 16px;
+            padding: 14px 18px;
             border: 1px solid #cbd5e1;
-            border-radius: 28px;
-            font-size: 0.9rem;
+            border-radius: 60px;
             font-family: inherit;
+            font-size: 0.9rem;
             background: #fff;
         }
-
+        textarea {
+            border-radius: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
         button[type="submit"] {
             width: 100%;
             background: #0f766e;
             border: none;
             padding: 14px;
-            border-radius: 40px;
+            border-radius: 60px;
             font-weight: bold;
             font-size: 1rem;
             color: white;
+            cursor: pointer;
         }
 
         footer {
             background: #0f172a;
-            color: #cbd5e1;
+            color: #94a3b8;
             text-align: center;
-            padding: 32px 20px;
-            margin-top: 24px;
+            padding: 36px 20px;
+            margin-top: 48px;
         }
 
-        /* PC MODE: lebih lebar, hero jadi 2 kolom */
+        /* RESPONSIVE PC (LEBAR) */
         @media (min-width: 768px) {
             .hero-grid {
                 flex-direction: row;
-                align-items: center;
-            }
-            .hero-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 48px;
+                align-items: center;
             }
             .hero-text h2 {
-                font-size: 2.7rem;
-            }
-            .about-wrap {
-                flex-direction: row;
-                align-items: center;
+                font-size: 3rem;
             }
             .contact-flex {
                 flex-direction: row;
             }
-            .section-title {
-                font-size: 2.2rem;
-            }
             .nav-container {
-                flex-direction: row;
+                flex-wrap: nowrap;
             }
         }
-
-        /* tambahan sentuhan */
-        .location-badge {
-            background: #e0f2fe;
-            border-radius: 32px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-weight: 500;
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 18px;
+            }
+            .about-wrapper {
+                padding: 32px 20px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            nav ul {
+                gap: 18px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -370,13 +360,16 @@
 
 <header>
     <div class="nav-container">
-        <div class="logo-area">
-            <div class="logo-icon">🦷</div>
+        <a href="#" class="logo">
+            <!-- GANTI: logo.png dengan file logo Anda. Jika tidak ada, akan tampil "AD" -->
+            <div class="logo-img">
+                <img src="logo.png" alt="Logo Antoni Dental Care" onerror="this.style.display='none'; this.parentElement.innerText='AD'; this.parentElement.style.background='#0f766e';">
+            </div>
             <div class="logo-text">
                 <h1>Antoni Dental Care</h1>
-                <p>Praktik Mandiri Terapis Gigi & Mulut</p>
+                <span>Praktik Mandiri Terapis Gigi & Mulut</span>
             </div>
-        </div>
+        </a>
         <nav>
             <ul>
                 <li><a href="#home">Beranda</a></li>
@@ -390,16 +383,16 @@
 </header>
 
 <main>
-    <!-- Hero section (Senyum Sehat) -->
+    <!-- Hero / Beranda -->
     <section id="home" class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <h2>Senyum Sehat, <br>Kepercayaan Diri Maksimal</h2>
+                <h2>Senyum Sehat,<br>Kepercayaan Diri Maksimal</h2>
                 <p>Antoni Dental Care menyediakan perawatan gigi dan mulut profesional dengan terapis berpengalaman. Kami mengutamakan kenyamanan dan kesehatan pasien.</p>
-                <a href="#kontak" class="btn">📅 Buat Janji Sekarang</a>
+                <a href="#kontak" class="btn-primary">📋 Buat Janji Sekarang</a>
             </div>
             <div class="hero-image">
-                <img src="https://placehold.co/500x400/e6f7f5/0f766e?text=Ilustrasi+Klinik+Gigi" alt="Dental Care Illustration">
+                <img src="https://placehold.co/500x400/e6f7f5/0f766e?text=Ilustrasi+Klinik+Gigi" alt="Ilustrasi Klinik Gigi">
             </div>
         </div>
     </section>
@@ -409,67 +402,65 @@
         <div class="container">
             <h2 class="section-title">Layanan Kami</h2>
             <div class="services-grid">
-                <div class="service-card"><div class="service-icon">🪥</div><h3>Pembersihan Karang Gigi</h3><p>Scaling dan polishing untuk gigi bersih bebas plak.</p></div>
-                <div class="service-card"><div class="service-icon">🦷</div><h3>Perawatan Saluran Akar</h3><p>Penanganan sakit gigi tanpa perlu cabut.</p></div>
-                <div class="service-card"><div class="service-icon">✨</div><h3>Veneer & Pemutihan Gigi</h3><p>Layanan estetik untuk senyum cerah alami.</p></div>
-                <div class="service-card"><div class="service-icon">📖</div><h3>Konsultasi Kesehatan Mulut</h3><p>Edukasi dan pencegahan masalah gigi & gusi.</p></div>
+                <div class="service-card"><div class="service-icon">🪥</div><h3>Pembersihan Karang Gigi</h3><p>Scaling & polishing bebas plak</p></div>
+                <div class="service-card"><div class="service-icon">🦷</div><h3>Perawatan Saluran Akar</h3><p>Atasi sakit gigi tanpa cabut</p></div>
+                <div class="service-card"><div class="service-icon">✨</div><h3>Veneer & Pemutihan</h3><p>Senyum cerah alami</p></div>
+                <div class="service-card"><div class="service-icon">📖</div><h3>Konsultasi Kesehatan Mulut</h3><p>Edukasi & pencegahan</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Tentang Praktik Kami -->
-    <section id="tentang" style="background: #f8fafc;">
-        <div class="container">
-            <h2 class="section-title">Tentang Praktik Kami</h2>
-            <div class="about-wrap">
-                <div class="about-text">
-                    <p><strong>Antoni Dental Care</strong> adalah praktik mandiri terapis gigi dan mulut yang telah melayani masyarakat sejak 2018. Kami berkomitmen menghadirkan layanan kesehatan gigi yang terjangkau, modern, dan humanis.</p>
-                    <p>Didukung alat sterilisasi standar dan teknik terbaru, setiap prosedur dilakukan dengan hati-hati agar pasien merasa nyaman. Kami menerima pasien umum, anak-anak, hingga lansia.</p>
-                    <p><span class="location-badge">📍 Lokasi strategis & suasana bersih seperti rumah sendiri.</span></p>
-                </div>
-                <div class="about-image">
-                    <img src="https://placehold.co/500x280/f1f5f9/0f766e?text=Ruangan+Klinik" style="border-radius: 32px; width:100%; max-width: 400px;" alt="Suasana klinik">
-                </div>
+    <!-- Tentang -->
+    <section id="tentang">
+        <div class="container about-wrapper">
+            <div class="about-text">
+                <h3 style="font-size: 1.8rem; margin-bottom: 16px; color:#0c4a6e;">Tentang Praktik Kami</h3>
+                <p><strong>Antoni Dental Care</strong> adalah praktik mandiri terapis gigi dan mulut yang telah melayani masyarakat sejak 2018. Kami berkomitmen menghadirkan layanan kesehatan gigi yang terjangkau, modern, dan humanis.</p>
+                <p>Didukung alat sterilisasi standar dan teknik terbaru, setiap prosedur dilakukan dengan hati-hati agar pasien merasa nyaman. Kami menerima pasien umum, anak-anak, hingga lansia.</p>
+                <p>📍 <strong>Lokasi strategis</strong> & suasana bersih seperti rumah sendiri.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://placehold.co/450x300/f1f5f9/0f766e?text=Suasana+Klinik" alt="Ruangan Klinik">
             </div>
         </div>
     </section>
 
-    <!-- Tim Terapis Gigi -->
+    <!-- Tim Terapis -->
     <section id="tim">
         <div class="container">
             <h2 class="section-title">Tim Terapis Gigi</h2>
             <div class="team-grid">
-                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=drg.+Antoni" alt="Terapis"><h3>drg. Antoni Setiawan</h3><p>Dokter Gigi & Pendiri</p></div>
-                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=drg.+Rina" alt="Terapis 2"><h3>drg. Rina Marlina</h3><p>Spesialis Konservasi Gigi</p></div>
-                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=Terapis+Rizki" alt="Terapis Mulut"><h3>Rizki A.Md.KG</h3><p>Terapis Gigi & Mulut</p></div>
+                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=drg.+Antoni" alt="Dokter Antoni"><h3>drg. Antoni Setiawan</h3><p>Dokter Gigi & Pendiri</p></div>
+                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=drg.+Rina" alt="Dokter Rina"><h3>drg. Rina Marlina</h3><p>Spesialis Konservasi</p></div>
+                <div class="team-card"><img src="https://placehold.co/400x300/f1f5f9/0f766e?text=Rizki" alt="Terapis Rizki"><h3>Rizki A.Md.KG</h3><p>Terapis Gigi & Mulut</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Kontak dan Reservasi -->
-    <section id="kontak" style="background: #f1f5f9;">
+    <!-- Kontak & Reservasi -->
+    <section id="kontak" style="background: #f9fbfd;">
         <div class="container">
             <h2 class="section-title">Hubungi & Reservasi</h2>
             <div class="contact-flex">
                 <div class="contact-info">
-                    <h3>Informasi Praktik</h3>
+                    <h3 style="margin-bottom: 20px;">Informasi Praktik</h3>
                     <p>📞 <strong>+62 812-3456-7890</strong> (WA/Telepon)</p>
                     <p>🏥 Jl. Kesehatan No. 45, Kota Medan</p>
                     <p>⏰ Senin - Sabtu : 09.00 - 18.00</p>
                     <p>✉️ antonidental@care.com</p>
-                    <p>⭐ Instagram : @antonidentalcare</p>
+                    <p>📱 Instagram : @antonidentalcare</p>
                 </div>
                 <div class="contact-form">
-                    <h3>Form Janji Temu</h3>
-                    <form id="bookingForm">
-                        <div class="form-group" style="margin-bottom:16px"><input type="text" placeholder="Nama Lengkap" required></div>
-                        <div class="form-group" style="margin-bottom:16px"><input type="tel" placeholder="Nomor WhatsApp" required></div>
-                        <div class="form-group" style="margin-bottom:16px"><select required><option value="">Pilih Layanan</option><option>Pembersihan Karang Gigi</option><option>Perawatan Saluran Akar</option><option>Veneer / Pemutihan</option><option>Konsultasi Umum</option></select></div>
-                        <div class="form-group" style="margin-bottom:16px"><input type="date" required></div>
-                        <div class="form-group" style="margin-bottom:20px"><textarea rows="2" placeholder="Keluhan / Catatan tambahan"></textarea></div>
-                        <button type="submit" class="btn">Kirim Permintaan</button>
+                    <h3 style="margin-bottom: 20px;">Form Janji Temu</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group"><input type="text" placeholder="Nama Lengkap" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Nomor WhatsApp" required></div>
+                        <div class="form-group"><select required><option value="">Pilih Layanan</option><option>Pembersihan Karang Gigi</option><option>Perawatan Saluran Akar</option><option>Veneer / Pemutihan</option><option>Konsultasi Umum</option></select></div>
+                        <div class="form-group"><input type="date" required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Keluhan / Catatan tambahan"></textarea></div>
+                        <button type="submit">Kirim Permintaan</button>
                     </form>
-                    <p style="font-size: 12px; margin-top: 16px;">✅ Admin akan menghubungi Anda dalam 1x24 jam</p>
+                    <p style="font-size: 12px; margin-top: 16px;">✅ Admin akan menghubungi Anda maksimal 1x24 jam</p>
                 </div>
             </div>
         </div>
@@ -478,13 +469,13 @@
 
 <footer>
     <p>© 2026 Antoni Dental Care — Praktik Mandiri Terapis Gigi dan Mulut</p>
-    <p style="margin-top: 10px; font-size:0.8rem;">Senyum Sehat, Kepercayaan Diri Maksimal</p>
+    <p style="margin-top: 8px;">Senyum Sehat, Kepercayaan Diri Maksimal</p>
 </footer>
 
 <script>
-    document.getElementById('bookingForm')?.addEventListener('submit', function(e){
+    document.getElementById('appointmentForm')?.addEventListener('submit', function(e){
         e.preventDefault();
-        alert('✅ Permintaan janji temu terkirim. Tim Antoni Dental Care akan segera menghubungi Anda.');
+        alert('✅ Permintaan janji temu berhasil dikirim. Tim Antoni Dental Care akan segera menghubungi Anda.');
         this.reset();
     });
 </script>
