@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baitussayam Dental Care</title>
-    <!-- Tambahan ?v=2 di bawah ini berfungsi memaksa HP Anda membaca CSS baru -->
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-    <!-- Navigasi -->
     <header>
         <nav>
             <div class="logo">
-                <!-- Pastikan nama file logo sesuai dengan yang ada di GitHub -->
                 <img src="logo.jpg" alt="Logo Baitussayam Dental Care">
             </div>
             <ul>
                 <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#dokter">Praktisi</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#kontak">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Bagian Hero/Beranda -->
     <section id="beranda" class="hero">
         <div class="hero-content">
             <h1>Klinik Kesehatan Gigi Dan Mulut</h1>
@@ -33,7 +32,6 @@
         </div>
     </section>
 
-    <!-- Bagian Layanan -->
     <section id="layanan" class="services">
         <h2>Layanan Kami</h2>
         <div class="service-cards">
@@ -52,7 +50,43 @@
         </div>
     </section>
 
-    <!-- Bagian Kontak -->
+    <section id="dokter" class="team">
+        <h2>Praktisi Kami</h2>
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=150&h=150" alt="Antoni Dwi Saputra" class="dokter-img">
+            <h3>Antoni Dwi Saputra</h3>
+            <p>Terapis Gigi dan Mulut Profesional</p>
+        </div>
+    </section>
+
+    <section id="testimoni" class="testimonials">
+        <h2>Apa Kata Pasien Kami</h2>
+        <div class="testimonial-cards">
+            <div class="testi-card">
+                <p>"Pelayanan sangat ramah dan tempatnya sangat bersih. Sangat direkomendasikan untuk keluarga!"</p>
+                <span><strong>- Budi Santoso</strong></span>
+            </div>
+            <div class="testi-card">
+                <p>"Scaling gigi di sini nyaman sekali, tidak ngilu dan penjelasannya sangat detail dan islami."</p>
+                <span><strong>- Siti Aminah</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Pertanyaan Sering Diajukan</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <p class="question">Q: Apakah menerima BPJS?</p>
+                <p class="answer">A: Saat ini kami melayani pasien umum secara mandiri dengan harga yang tetap terjangkau.</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">Q: Berapa lama waktu pengerjaan scaling gigi?</p>
+                <p class="answer">A: Rata-rata memakan waktu 30-45 menit tergantung pada kondisi ketebalan karang gigi Anda.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="kontak" class="contact">
         <h2>Hubungi Kami</h2>
         <p>Kunjungi tempat praktik kami atau hubungi admin untuk mengatur jadwal kunjungan Anda.</p>
@@ -64,7 +98,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <a href="https://api.whatsapp.com/send?phone=628XXXXXXXXXX&text=Halo%20Baitussayam%20Dental%20Care,%20saya%20ingin%20buat%20janji%20temu." class="whatsapp-float" target="_blank">
+        <span>Chat WA</span>
+    </a>
+
     <footer>
         <p>&copy; 2026 Baitussayam Dental Care. All rights reserved.</p>
     </footer>
