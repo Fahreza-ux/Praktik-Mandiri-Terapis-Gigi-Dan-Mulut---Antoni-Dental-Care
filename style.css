@@ -1,0 +1,174 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigasi */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1FA3B8; /* Warna teal dari logo di dinding */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1FA3B8;
+}
+
+/* Hero Section */
+.hero {
+    /* Menggunakan gambar placeholder dari Unsplash bertema dental, dilapisi warna biru transparan */
+    background: linear-gradient(rgba(31, 163, 184, 0.85), rgba(31, 163, 184, 0.85)), url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ffffff;
+    color: #1FA3B8;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Section Umum */
+.services, .contact {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.services h2, .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1FA3B8;
+}
+
+/* Card Layanan */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    color: #1FA3B8;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Kontak */
+.contact-info {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+}
