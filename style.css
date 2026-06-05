@@ -32,46 +32,35 @@ nav {
     margin: auto;
 }
 
-/* FIX: Mengunci ukuran logo secara mutlak */
-header img {
-    max-height: 70px; /* Tinggi maksimal logo di laptop */
-    max-width: 250px; /* Lebar maksimal */
-    width: auto;
-    object-fit: contain; /* Memastikan logo tidak gepeng/terpotong */
-    display: block;
-}
-
-/* Jika Anda menyertakan teks di sebelah logo */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0b2b5a;
+/* KODE SAPU JAGAT LOGO (Mencegah Logo Raksasa) */
+.logo img, header img {
+    height: 60px !important;      /* Kunci tinggi maksimal */
+    width: auto !important;       
+    max-width: 250px !important;  
+    object-fit: contain !important; 
+    display: block !important;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #0b2b5a; /* Biru Navy */
     font-weight: 600;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #cca43b; /* Warna aksen emas */
+    color: #cca43b; /* Warna Emas */
 }
 
 /* Hero Section */
 .hero {
-    /* Background default Biru Navy jika gambar tidak ada */
-    background: linear-gradient(rgba(11, 43, 90, 0.8), rgba(11, 43, 90, 0.8)); 
+    background: linear-gradient(rgba(11, 43, 90, 0.8), rgba(11, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -79,26 +68,27 @@ nav ul li a:hover {
     text-align: center;
     color: white;
     padding: 0 1rem;
-    margin-top: 80px;
+    margin-top: 70px;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: #cca43b; /* Emas */
 }
 
 .hero-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    color: #cca43b;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -106,7 +96,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 35px;
-    background: #cca43b; 
+    background: #cca43b; /* Emas */
     color: #ffffff;
     text-decoration: none;
     border-radius: 30px;
@@ -123,16 +113,16 @@ nav ul li a:hover {
 
 /* Section Umum */
 .services, .contact {
-    padding: 5rem 5%;
+    padding: 6rem 5%;
     max-width: 1200px;
     margin: auto;
     text-align: center;
 }
 
 .services h2, .contact h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #0b2b5a; 
+    color: #0b2b5a; /* Biru Navy */
 }
 
 /* Card Layanan */
@@ -169,7 +159,7 @@ nav ul li a:hover {
     font-size: 1.1rem;
     line-height: 2;
     background: #ffffff;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
     display: inline-block;
     text-align: left;
@@ -185,38 +175,44 @@ footer {
     background: #0b2b5a; 
     color: #fff;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
 }
 
 /* =========================================
-   RESPONSIF UNTUK TAMPILAN HP (MOBILE FIX)
+   RESPONSIF UNTUK TAMPILAN HP
    ========================================= */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Menyusun logo dan menu atas-bawah */
-        padding: 15px 10px;
+        flex-direction: column;
+        justify-content: center;
         gap: 15px;
+        padding: 15px 10px;
     }
     
-    /* FIX: Memastikan logo sangat kecil dan rapi di HP */
-    header img {
-        max-height: 65px; 
-        max-width: 80vw; /* Tidak akan pernah melebihi lebar layar HP */
+    /* Ukuran logo dipaksa lebih kecil lagi di HP */
+    .logo img, header img {
+        height: 50px !important;     
+        max-width: 80vw !important;  
+        margin: 0 auto !important;   
     }
 
     nav ul {
-        gap: 1.2rem;
-        font-size: 0.95rem;
+        flex-wrap: wrap;
         justify-content: center;
-        flex-wrap: wrap; /* Jika menu banyak, akan turun ke baris baru otomatis */
+        gap: 15px;
+        font-size: 0.95rem;
     }
 
     .hero {
-        margin-top: 130px; /* Memberi ruang ekstra agar hero tidak tertutup header yang menebal */
+        margin-top: 130px; /* Jarak ekstra agar tidak tertutup menu */
     }
 
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .contact-info {
