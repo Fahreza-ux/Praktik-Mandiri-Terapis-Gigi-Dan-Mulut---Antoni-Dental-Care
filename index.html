@@ -112,22 +112,12 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #0f2b3d;
     }
 
-    .logo-icon {
-      background: #0f2b3d;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
+    .logo img {
+      height: 45px;
+      width: auto;
+      object-fit: contain;
     }
 
     .logo-text {
@@ -139,21 +129,25 @@
     .logo-text .name {
       font-size: 1.2rem;
       font-weight: 800;
+      color: #0f2b3d;
     }
 
     .logo-text .care {
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: #2b7a62;
       letter-spacing: 0.5px;
     }
 
     @media (min-width: 480px) {
+      .logo img {
+        height: 50px;
+      }
       .logo-text .name {
         font-size: 1.4rem;
       }
       .logo-text .care {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
     }
 
@@ -581,10 +575,8 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <div class="logo-icon">
-        <i class="fas fa-tooth"></i>
-      </div>
-      <div class="logo-text">
+      <img src="logo.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="logo-text" style="display: none;">
         <span class="name">Baitussayam</span>
         <span class="care">DENTAL CARE</span>
       </div>
@@ -597,12 +589,12 @@
       <button class="btn btn-primary" id="openModalBtnDesktop" style="padding: 8px 20px;">Booking</button>
     </div>
     <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <i class="fas fa-ellipsis-h"></i> <!-- titik tiga horizontal -->
+      <i class="fas fa-ellipsis-h"></i>
     </button>
   </div>
 </nav>
 
-<!-- Mobile Drawer (Sidebar) -->
+<!-- Mobile Drawer -->
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-header">
     <button class="close-drawer" id="closeDrawerBtn">&times;</button>
@@ -632,7 +624,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=Baitussayam+Dental+Care" alt="Baitussayam Dental Care modern">
+      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=Baitussayam+Dental+Care" alt="Baitussayam Dental Care">
     </div>
   </div>
 </section>
@@ -668,7 +660,7 @@
       <button class="btn btn-outline" id="aboutBookBtn"><i class="fas fa-phone-alt"></i> Konsultasi Sekarang</button>
     </div>
     <div class="about-img">
-      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam modern">
+      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam">
     </div>
   </div>
 </section>
@@ -727,7 +719,17 @@
 </div>
 
 <script>
-  // Mobile drawer elements
+  // Fallback jika logo.png tidak ditemukan
+  const logoImg = document.querySelector('.logo img');
+  const logoText = document.querySelector('.logo-text');
+  if(logoImg) {
+    logoImg.onerror = function() {
+      this.style.display = 'none';
+      if(logoText) logoText.style.display = 'flex';
+    }
+  }
+
+  // Mobile drawer
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
@@ -749,7 +751,6 @@
   closeDrawerBtn.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
 
-  // Tutup drawer saat klik link di dalamnya
   document.querySelectorAll('.drawer-links a').forEach(link => {
     link.addEventListener('click', (e) => {
       closeDrawer();
@@ -801,7 +802,7 @@
     closeModal();
   });
 
-  // Smooth scroll untuk desktop nav links
+  // Smooth scroll desktop
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
