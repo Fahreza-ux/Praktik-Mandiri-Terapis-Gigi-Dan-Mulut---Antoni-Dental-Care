@@ -22,14 +22,12 @@
       scroll-behavior: smooth;
     }
 
-    /* container */
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
     }
 
-    /* typography */
     h1, h2, h3 {
       font-weight: 700;
       line-height: 1.2;
@@ -37,12 +35,21 @@
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
 
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 2.2rem;
+      }
+      .container {
+        padding: 0 32px;
+      }
+    }
+
     .section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     .section-light {
@@ -53,15 +60,25 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 12px 28px;
+      padding: 12px 24px;
       border-radius: 40px;
       font-weight: 600;
       transition: all 0.25s ease;
       cursor: pointer;
       border: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       text-decoration: none;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        white-space: normal;
+      }
     }
 
     .btn-primary {
@@ -73,7 +90,6 @@
     .btn-primary:hover {
       background: #1a4359;
       transform: translateY(-2px);
-      box-shadow: 0 12px 20px -8px rgba(15,43,61,0.3);
     }
 
     .btn-outline {
@@ -82,20 +98,15 @@
       color: #0f2b3d;
     }
 
-    .btn-outline:hover {
-      background: #0f2b3d;
-      color: white;
-    }
-
     /* navbar */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
       z-index: 100;
       border-bottom: 1px solid #e9edf2;
-      padding: 18px 0;
+      padding: 14px 0;
     }
 
     .nav-flex {
@@ -103,10 +114,11 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 16px;
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #0f2b3d;
@@ -116,10 +128,26 @@
       color: #2b7a62;
     }
 
+    @media (min-width: 768px) {
+      .logo {
+        font-size: 1.8rem;
+      }
+    }
+
     .nav-links {
       display: flex;
-      gap: 36px;
+      gap: 20px;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        gap: 12px;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
     }
 
     .nav-links a {
@@ -135,19 +163,27 @@
 
     /* hero */
     .hero {
-      padding: 60px 0 80px 0;
+      padding: 40px 0 60px 0;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
     }
 
     .hero-grid {
       display: flex;
-      align-items: center;
-      gap: 50px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 40px;
     }
 
-    .hero-content {
-      flex: 1.2;
+    @media (min-width: 900px) {
+      .hero-grid {
+        flex-direction: row;
+        align-items: center;
+      }
+      .hero-content {
+        flex: 1.2;
+      }
+      .hero-image {
+        flex: 1;
+      }
     }
 
     .hero-badge {
@@ -156,179 +192,162 @@
       display: inline-block;
       padding: 6px 16px;
       border-radius: 40px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-bottom: 20px;
     }
 
     .hero-content h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      margin-bottom: 16px;
       color: #0a2535;
     }
 
+    @media (min-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content h1 {
+        font-size: 3.5rem;
+      }
+    }
+
     .hero-content p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #3a5468;
-      margin-bottom: 32px;
-      max-width: 90%;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content p {
+        font-size: 1.1rem;
+      }
     }
 
     .hero-stats {
       display: flex;
-      gap: 32px;
-      margin-top: 40px;
+      gap: 24px;
+      margin-top: 32px;
+      flex-wrap: wrap;
     }
 
     .stat-item h3 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: #2b7a62;
-    }
-
-    .hero-image {
-      flex: 1;
-      text-align: center;
     }
 
     .hero-image img {
       max-width: 100%;
-      border-radius: 32px;
-      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+      border-radius: 28px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
     }
 
-    /* services cards */
+    /* services grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
     }
 
     .service-card {
       background: white;
-      border-radius: 28px;
-      padding: 32px 24px;
+      border-radius: 24px;
+      padding: 28px 20px;
       text-align: center;
       transition: 0.25s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
       border: 1px solid #ecf3f0;
     }
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: #cde3db;
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
-    }
-
     .service-icon {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #2b7a62;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    /* about section */
+    /* about */
     .about-flex {
       display: flex;
-      gap: 48px;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media (min-width: 800px) {
+      .about-flex {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
     .about-text {
       flex: 1;
     }
 
-    .about-text p {
-      margin: 20px 0;
-      color: #2c4b62;
+    .about-img {
+      flex: 1;
+    }
+
+    .about-img img {
+      width: 100%;
+      border-radius: 28px;
     }
 
     .feature-list {
       list-style: none;
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .feature-list li {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .feature-list i {
-      color: #2b7a62;
-      font-size: 1.2rem;
-    }
-
-    .about-img {
-      flex: 1;
-      border-radius: 32px;
-      overflow: hidden;
-    }
-
-    .about-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 32px;
-    }
-
-    /* testimonials */
+    /* testimonial */
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 640px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
     }
 
     .testimonial-card {
       background: white;
-      border-radius: 28px;
-      padding: 32px;
-      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.05);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
 
     .stars {
       color: #f9b43a;
-      margin-bottom: 16px;
-      letter-spacing: 2px;
+      margin-bottom: 12px;
     }
 
-    .testimonial-text {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #2d4a64;
-      margin: 16px 0;
-    }
-
-    .client-name {
-      font-weight: 700;
-      margin-top: 12px;
-      color: #0f2b3d;
-    }
-
-    /* booking / cta */
+    /* cta */
     .cta-section {
       background: #0f2b3d;
       color: white;
-      border-radius: 48px;
-      margin: 40px auto 80px;
-      padding: 64px 48px;
+      border-radius: 32px;
+      margin: 40px auto 60px;
+      padding: 48px 24px;
       text-align: center;
     }
 
-    .cta-section h2 {
-      color: white;
-    }
-
-    .cta-section p {
-      margin-bottom: 32px;
-      opacity: 0.85;
+    @media (min-width: 768px) {
+      .cta-section {
+        padding: 64px 48px;
+        margin: 40px auto 80px;
+      }
     }
 
     .btn-cta {
@@ -336,53 +355,45 @@
       color: #0f2b3d;
     }
 
-    .btn-cta:hover {
-      background: #eef3f0;
-      transform: translateY(-2px);
-    }
-
     /* footer */
     footer {
       background: #f3f6f9;
-      padding: 48px 0 24px;
+      padding: 40px 0 24px;
       border-top: 1px solid #e2e8f0;
     }
 
     .footer-grid {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-      margin-bottom: 40px;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
 
     .footer-col h4 {
-      margin-bottom: 20px;
-      font-size: 1.2rem;
-    }
-
-    .footer-col p, .footer-col a {
-      color: #3d5a73;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .socials i {
       font-size: 1.4rem;
       margin-right: 18px;
       color: #2b7a62;
-      transition: 0.2s;
     }
 
     .copyright {
       text-align: center;
       padding-top: 24px;
       border-top: 1px solid #dee4ec;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
-    /* modal booking */
+    /* modal */
     .modal {
       display: none;
       position: fixed;
@@ -399,26 +410,30 @@
       background: white;
       max-width: 480px;
       width: 90%;
-      border-radius: 36px;
-      padding: 32px;
+      border-radius: 32px;
+      padding: 28px 24px;
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
     }
 
     .form-group {
       margin-bottom: 18px;
     }
 
-    .form-group input, .form-group select {
+    .form-group input, 
+    .form-group select {
       width: 100%;
       padding: 14px 18px;
       border-radius: 30px;
       border: 1px solid #cfdfd7;
       font-family: inherit;
+      font-size: 1rem;
       outline: none;
     }
 
@@ -430,16 +445,14 @@
       position: absolute;
       top: 20px;
       right: 24px;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
+      line-height: 1;
     }
 
-    @media (max-width: 800px) {
-      .container { padding: 0 24px; }
-      .hero-content h1 { font-size: 2.5rem; }
-      .nav-links { gap: 20px; }
-      .section { padding: 60px 0; }
-      .hero-grid { flex-direction: column; }
+    button {
+      background: none;
+      border: none;
     }
   </style>
 </head>
@@ -454,8 +467,7 @@
       <a href="#services">Layanan</a>
       <a href="#about">Tentang</a>
       <a href="#testimonials">Testimoni</a>
-      <a href="#contact">Kontak</a>
-      <button class="btn btn-primary" style="padding: 8px 20px;" id="openModalBtn">Booking Online</button>
+      <button class="btn btn-primary" id="openModalBtn" style="padding: 6px 16px; font-size: 0.85rem;">Booking</button>
     </div>
   </div>
 </nav>
@@ -464,54 +476,54 @@
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-tooth"></i> Dental Care Modern & Nyaman</div>
+      <div class="hero-badge"><i class="fas fa-tooth"></i> Dental Care Modern</div>
       <h1>Senyum Sehat, <br>Percaya Diri Maksimal</h1>
       <p>Gabungkan teknologi terkini dengan perawatan personal — pengalaman dental care yang bebas rasa cemas dan hasil optimal.</p>
-      <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Buat Janji Sekarang</button>
+      <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Buat Janji</button>
       <div class="hero-stats">
         <div class="stat-item"><h3>5000+</h3><p>Pasien Puas</p></div>
-        <div class="stat-item"><h3>15+</h3><p>Dokter Spesialis</p></div>
-        <div class="stat-item"><h3>4.9</h3><p>Rating Google</p></div>
+        <div class="stat-item"><h3>15+</h3><p>Dokter</p></div>
+        <div class="stat-item"><h3>4.9</h3><p>Rating</p></div>
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=Modern+Dental+Care" alt="Dental Care modern illustration" style="background:#eef2f0; object-fit: cover;">
+      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=SmileCare+Modern" alt="Dental Care modern">
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
+<!-- Services -->
 <section class="section" id="services">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-      <h2>Layanan Unggulan Kami</h2>
+      <h2>Layanan Unggulan</h2>
       <p>Teknologi mutakhir & tim berpengalaman untuk setiap masalah gigi Anda.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi dengan teknologi ultrasonic, hasil lebih bersih & nyaman.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Veneer Estetik</h3><p>Lapisan porselen tipis untuk senyum sempurna dan natural.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Kawat Gigi (Behel)</h3><p>Perataan gigi dengan sistem self-ligating modern, hasil cepat dan minim rasa sakit.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3>Whitening Laser</h3><p>Pemutihan gigi instan dengan laser, aman dan hasil tahan lama.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi teknologi ultrasonic, nyaman & hasil maksimal.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Veneer Estetik</h3><p>Lapisan porselen tipis untuk senyum sempurna & natural.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Kawat Gigi</h3><p>Perataan gigi sistem self-ligating modern, hasil cepat & minim sakit.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3>Whitening Laser</h3><p>Pemutihan gigi instan dengan laser, aman & tahan lama.</p></div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
+<!-- About -->
 <section class="section section-light" id="about">
   <div class="container about-flex">
     <div class="about-text">
-      <h2>Klinik dengan Standar Internasional</h2>
-      <p>SmileCare hadir sebagai solusi dental modern yang mengutamakan kenyamanan dan keamanan. Kami menggabungkan teknologi digital (CBCT, intraoral scanner) dengan pendekatan humanis.</p>
+      <h2>Klinik Standar Internasional</h2>
+      <p>SmileCare hadir sebagai solusi dental modern yang mengutamakan kenyamanan & keamanan. Teknologi digital + pendekatan humanis.</p>
       <ul class="feature-list">
-        <li><i class="fas fa-check-circle"></i> Dokter gigi spesialis & bersertifikat</li>
-        <li><i class="fas fa-check-circle"></i> Alat sterilisasi standar rumah sakit</li>
+        <li><i class="fas fa-check-circle"></i> Dokter spesialis bersertifikat</li>
+        <li><i class="fas fa-check-circle"></i> Alat sterilisasi standar RS</li>
         <li><i class="fas fa-check-circle"></i> Ruangan nyaman & music therapy</li>
         <li><i class="fas fa-check-circle"></i> Konsultasi gratis pertama</li>
       </ul>
       <button class="btn btn-outline" id="aboutBookBtn"><i class="fas fa-phone-alt"></i> Konsultasi Sekarang</button>
     </div>
     <div class="about-img">
-      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Modern" alt="dental clinic interior">
+      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Nyaman" alt="Klinik modern">
     </div>
   </div>
 </section>
@@ -519,14 +531,14 @@
 <!-- Testimonials -->
 <section class="section" id="testimonials">
   <div class="container">
-    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-      <h2>Apa Kata Pasien Kami</h2>
-      <p>Ribuan senyum berhasil kami ciptakan dengan perawatan terbaik.</p>
+    <div style="text-align: center;">
+      <h2>Apa Kata Pasien</h2>
+      <p>Ribuan senyum berhasil kami ciptakan.</p>
     </div>
     <div class="testimonial-grid">
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Pengalaman scaling paling nyaman! Dokter sangat sabar dan hasil gigi bersih sempurna. Suasana klinik bikin rileks."</p><div class="client-name">— Amanda, 28</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Setelah pasang behel di SmileCare, progress gigi terlihat cepat. Teknologi modern dan konsultasi terjadwal rapi."</p><div class="client-name">— Dimas, 24</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">"Whitening laser hasilnya wow! Gigiku lebih putih 3 shade dalam 1 sesi. Tim resepsionis ramah banget."</p><div class="client-name">— Sarah, 32</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Scaling paling nyaman! Dokter sabar, hasil bersih sempurna. Klinik bikin rileks."</p><div class="client-name">— Amanda, 28</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Behel di SmileCare, progress cepat. Teknologi modern & konsultasi terjadwal rapi."</p><div class="client-name">— Dimas, 24</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">"Whitening laser wow! Gigi lebih putih 3 shade dalam 1 sesi. Resepsionis ramah."</p><div class="client-name">— Sarah, 32</div></div>
     </div>
   </div>
 </section>
@@ -535,7 +547,7 @@
 <section class="container" id="contact">
   <div class="cta-section">
     <h2>Siap untuk Senyum Impian?</h2>
-    <p>Dapatkan konsultasi gratis & pemeriksaan lengkap senilai Rp250.000 untuk pendaftar pertama.</p>
+    <p>Konsultasi gratis + pemeriksaan lengkap senilai Rp250.000 untuk pendaftar pertama.</p>
     <button class="btn btn-cta" id="ctaBookBtn"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
   </div>
 </section>
@@ -545,7 +557,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col"><h4>SmileCare Dental</h4><p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 88, Jakarta Selatan</p><p><i class="fas fa-phone"></i> (021) 2345-6789</p><p><i class="fas fa-envelope"></i> hello@smilecare.id</p></div>
-      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu & Libur Nasional : 10:00 - 15:00</p></div>
+      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu & Libur : 10:00 - 15:00</p></div>
       <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-tiktok"></i><i class="fab fa-whatsapp"></i></div></div>
     </div>
     <div class="copyright">© 2025 SmileCare Modern Dental — Merawat Senyum Indonesia</div>
@@ -557,7 +569,7 @@
   <div class="modal-content">
     <span class="close-modal" id="closeModalBtn">&times;</span>
     <h3>Booking Kunjungan</h3>
-    <p style="margin-bottom: 20px;">Isi data Anda, tim kami akan menghubungi maksimal 1x24 jam.</p>
+    <p style="margin-bottom: 20px;">Isi data, tim kami akan hubungi maksimal 1x24 jam.</p>
     <form id="bookingForm">
       <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
       <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
@@ -570,7 +582,6 @@
 </div>
 
 <script>
-  // Modal elements
   const modal = document.getElementById('bookingModal');
   const openModalBtns = document.querySelectorAll('#openModalBtn, #heroBookBtn, #aboutBookBtn, #ctaBookBtn');
   const closeModalBtn = document.getElementById('closeModalBtn');
@@ -582,7 +593,6 @@
   closeModalBtn.addEventListener('click', closeModal);
   window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
 
-  // Simple booking form handler with alert & reset & close
   const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -599,13 +609,12 @@
       alert('Masukkan nomor telepon yang valid');
       return;
     }
-    // Simulasi sukses
     alert(`Terima kasih ${name}! Booking untuk layanan ${service} pada tanggal ${date} telah kami terima. Tim SmileCare akan menghubungi Anda di ${phone} dalam 1x24 jam.`);
     bookingForm.reset();
     closeModal();
   });
 
-  // Scroll nav smooth (all anchor links)
+  // Smooth scroll untuk navigasi
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -617,12 +626,6 @@
       }
     });
   });
-
-  // For "Konsultasi Sekarang" and others are already handled by openModal, but also optional.
-  // Additional smooth demo (hero stats hover effect etc)
-
-  // simple image placeholder handling: nothing else
-  console.log("SmileCare ready — modern dental website");
 </script>
 </body>
 </html>
