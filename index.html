@@ -2,27 +2,42 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Baitussayam Dental Care</title>
     <style>
-        /* CSS Ditaruh Langsung di Sini agar Tidak Berantakan */
-        * { margin:0; padding:0; box-sizing:border-box; font-family:sans-serif; }
-        body { background: #f5f8fa; color: #333; line-height: 1.6; width: 100%; overflow-x: hidden; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: sans-serif; }
+        body { background: #f4f7f6; padding-bottom: 50px; }
         
-        /* Header & Logo */
+        /* Navigasi */
         header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo img { height: 80px; width: auto; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
-        nav a { text-decoration: none; color: #0b2b5a; font-weight: bold; font-size: 12px; }
+        .logo img { height: 60px; width: auto; margin-bottom: 10px; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
+        nav a { text-decoration: none; color: #0b2b5a; font-weight: bold; font-size: 13px; }
 
         /* Banner */
-        .banner { width: 100%; height: 250px; background: #0b2b5a; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .hero { background: #0b2b5a; color: white; padding: 40px 20px; text-align: center; }
         
-        /* Lokasi Grid */
-        .section { padding: 30px 15px; text-align: center; }
-        .card { background: white; border-radius: 10px; padding: 20px; margin: 10px auto; max-width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
-        .btn-wa { display: block; background: #25d366; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        /* Grid Lokasi (Dibuat agar tampil semua) */
+        .section-title { text-align: center; margin: 30px 0 10px; color: #0b2b5a; }
+        .grid-container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            padding: 0 20px; 
+            align-items: center; 
+        }
+        
+        .card { 
+            background: white; 
+            width: 100%; 
+            max-width: 400px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-body { padding: 15px; }
+        .btn-wa { display: block; background: #25d366; color: white; text-align: center; padding: 12px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -38,22 +53,32 @@
         </nav>
     </header>
 
-    <section class="banner" id="beranda">
-        <div>
-            <h1>Baitussayam Dental Care</h1>
-            <p>Klinik Gigi Pilihan Keluarga</p>
-        </div>
+    <section class="hero" id="beranda">
+        <h1>Baitussayam Dental Care</h1>
+        <p>Klinik Gigi Pilihan Keluarga</p>
     </section>
 
-    <section class="section" id="lokasi">
-        <h2>Lokasi Kami</h2>
+    <h2 class="section-title">Lokasi Kami</h2>
+    <div class="grid-container">
+        <!-- Kartu 1 -->
         <div class="card">
             <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500">
-            <h3>Pusat</h3>
-            <p>Jl. Utama No. 123</p>
-            <a href="#" class="btn-wa">Chat WA</a>
+            <div class="card-body">
+                <h3>Cabang Pusat</h3>
+                <p>Jl. Utama No. 123</p>
+                <a href="#" class="btn-wa">Chat WA Pusat</a>
+            </div>
         </div>
-    </section>
+        <!-- Kartu 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bc0e05?w=500">
+            <div class="card-body">
+                <h3>Cabang Bintaro</h3>
+                <p>Jl. Bintaro Utama</p>
+                <a href="#" class="btn-wa">Chat WA Bintaro</a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
