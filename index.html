@@ -70,15 +70,6 @@
       border: none;
       font-size: 0.95rem;
       text-decoration: none;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 480px) {
-      .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        white-space: normal;
-      }
     }
 
     .btn-primary {
@@ -134,20 +125,11 @@
       }
     }
 
+    /* Desktop nav links */
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 32px;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 680px) {
-      .nav-links {
-        gap: 12px;
-      }
-      .nav-links a {
-        font-size: 0.85rem;
-      }
     }
 
     .nav-links a {
@@ -159,6 +141,105 @@
 
     .nav-links a:hover {
       color: #2b7a62;
+    }
+
+    /* Mobile menu button (titik tiga) */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #0f2b3d;
+      padding: 8px;
+      transition: 0.2s;
+    }
+
+    .mobile-menu-btn:hover {
+      color: #2b7a62;
+    }
+
+    /* Mobile drawer sidebar */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 280px;
+      height: 100%;
+      background: white;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+      z-index: 200;
+      transition: right 0.3s ease;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .close-drawer {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #1e2f3d;
+    }
+
+    .drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .drawer-links a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e2f3d;
+      padding: 8px 0;
+      border-bottom: 1px solid #ecf0f3;
+    }
+
+    .drawer-links a:hover {
+      color: #2b7a62;
+    }
+
+    .drawer-btn {
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 150;
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
     }
 
     /* hero */
@@ -219,12 +300,6 @@
       font-size: 1rem;
       color: #3a5468;
       margin-bottom: 28px;
-    }
-
-    @media (min-width: 768px) {
-      .hero-content p {
-        font-size: 1.1rem;
-      }
     }
 
     .hero-stats {
@@ -449,11 +524,6 @@
       cursor: pointer;
       line-height: 1;
     }
-
-    button {
-      background: none;
-      border: none;
-    }
   </style>
 </head>
 <body>
@@ -467,10 +537,28 @@
       <a href="#services">Layanan</a>
       <a href="#about">Tentang</a>
       <a href="#testimonials">Testimoni</a>
-      <button class="btn btn-primary" id="openModalBtn" style="padding: 6px 16px; font-size: 0.85rem;">Booking</button>
+      <button class="btn btn-primary" id="openModalBtnDesktop" style="padding: 8px 20px;">Booking</button>
     </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-ellipsis-h"></i> <!-- titik tiga horizontal -->
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Drawer (Sidebar) -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <button class="close-drawer" id="closeDrawerBtn">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="#home">Beranda</a>
+    <a href="#services">Layanan</a>
+    <a href="#about">Tentang</a>
+    <a href="#testimonials">Testimoni</a>
+    <button class="btn btn-primary drawer-btn" id="openModalBtnMobile">Booking Online</button>
+  </div>
+</div>
+<div class="overlay" id="overlay"></div>
 
 <!-- Hero Section -->
 <section class="hero" id="home">
@@ -582,17 +670,59 @@
 </div>
 
 <script>
+  // Mobile drawer elements
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const overlay = document.getElementById('overlay');
+
+  function openDrawer() {
+    mobileDrawer.classList.add('open');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuBtn.addEventListener('click', openDrawer);
+  closeDrawerBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  // Tutup drawer saat klik link di dalamnya
+  document.querySelectorAll('.drawer-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      closeDrawer();
+      const targetId = link.getAttribute('href');
+      if(targetId && targetId !== '#') {
+        e.preventDefault();
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Modal handler
   const modal = document.getElementById('bookingModal');
-  const openModalBtns = document.querySelectorAll('#openModalBtn, #heroBookBtn, #aboutBookBtn, #ctaBookBtn');
+  const openModalBtns = document.querySelectorAll('#openModalBtnDesktop, #openModalBtnMobile, #heroBookBtn, #aboutBookBtn, #ctaBookBtn');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
-  function openModal() { modal.style.display = 'flex'; }
+  function openModal() { 
+    modal.style.display = 'flex'; 
+    closeDrawer(); // jika drawer terbuka, tutup otomatis
+  }
   function closeModal() { modal.style.display = 'none'; }
 
   openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
   closeModalBtn.addEventListener('click', closeModal);
   window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
 
+  // Booking form
   const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -614,7 +744,7 @@
     closeModal();
   });
 
-  // Smooth scroll untuk navigasi
+  // Smooth scroll untuk desktop nav links
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
