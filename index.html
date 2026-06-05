@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Baitussayam Dental Care | Perawatan Gigi Murah & Terpercaya</title>
-  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -56,7 +55,6 @@
       background-color: #f9fafc;
     }
 
-    /* buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -75,18 +73,11 @@
     .btn-primary {
       background: #0f2b3d;
       color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
     .btn-primary:hover {
       background: #1a4359;
       transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid #0f2b3d;
-      color: #0f2b3d;
     }
 
     .btn-wa {
@@ -161,7 +152,6 @@
       }
     }
 
-    /* Desktop nav links */
     .nav-links {
       display: flex;
       gap: 32px;
@@ -179,7 +169,6 @@
       color: #2b7a62;
     }
 
-    /* Mobile menu button */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -199,7 +188,6 @@
       }
     }
 
-    /* Mobile drawer */
     .mobile-drawer {
       position: fixed;
       top: 0;
@@ -267,7 +255,7 @@
       display: block;
     }
 
-    /* Hero Section dengan promo card */
+    /* Hero dengan gambar promo di samping */
     .hero {
       padding: 40px 0 60px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
@@ -287,7 +275,7 @@
       .hero-content {
         flex: 1;
       }
-      .hero-promo {
+      .hero-image {
         flex: 1;
       }
     }
@@ -325,84 +313,15 @@
       margin-bottom: 28px;
     }
 
-    /* Promo Card - dari gambar */
-    .promo-card {
-      background: white;
+    .hero-image img {
+      max-width: 100%;
       border-radius: 28px;
-      padding: 24px;
       box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
-      border: 1px solid #e0f0ea;
+      width: 100%;
+      height: auto;
     }
 
-    .promo-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #0f2b3d;
-      margin-bottom: 8px;
-    }
-
-    .promo-sub {
-      color: #2b7a62;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .promo-free {
-      background: #ff6b6b;
-      color: white;
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .promo-prices {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .price-item {
-      text-align: center;
-      padding: 12px 8px;
-      background: #f8faf7;
-      border-radius: 16px;
-    }
-
-    .price-item h4 {
-      font-size: 0.8rem;
-      color: #4a6a7a;
-      margin-bottom: 6px;
-    }
-
-    .price-item .price {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #0f2b3d;
-    }
-
-    .wa-number {
-      background: #f0f7f4;
-      border-radius: 40px;
-      padding: 12px 16px;
-      text-align: center;
-      margin-top: 16px;
-    }
-
-    .wa-number i {
-      color: #25D366;
-      margin-right: 8px;
-    }
-
-    .wa-number span {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    /* services grid */
+    /* services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -437,7 +356,6 @@
       font-size: 1.1rem;
     }
 
-    /* about */
     .about-flex {
       display: flex;
       flex-direction: column;
@@ -463,7 +381,6 @@
       gap: 12px;
     }
 
-    /* cta */
     .cta-section {
       background: #0f2b3d;
       color: white;
@@ -473,7 +390,6 @@
       text-align: center;
     }
 
-    /* footer */
     footer {
       background: #f3f6f9;
       padding: 40px 0 24px;
@@ -508,7 +424,6 @@
       font-size: 0.8rem;
     }
 
-    /* modal */
     .modal {
       display: none;
       position: fixed;
@@ -550,11 +465,23 @@
       font-family: inherit;
       font-size: 1rem;
     }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .stars {
+      color: #f9b43a;
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar dengan logo2.png -->
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
@@ -592,35 +519,23 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section dengan Promo -->
+<!-- Hero Section dengan gambar promo di samping teks Senyum Sehat -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
       <div class="hero-badge"><i class="fas fa-tooth"></i> Yayasan Baitussayam Mulya Bekasi</div>
       <h1>Senyum Sehat, <br><span>Perawatan Gigi Murah & Terpercaya!</span></h1>
-      <p>Klinik gigi modern dengan harga terjangkau. Teknologi terbaik & dokter berpengalaman.</p>
+      <p>Klinik gigi modern dengan harga terjangkau. FREE konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000.</p>
       <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Booking Sekarang</button>
-      <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px; display: inline-flex;"><i class="fab fa-whatsapp"></i> Chat WA</a>
+      <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
-    <div class="hero-promo">
-      <div class="promo-card">
-        <div class="promo-title">✨ PERAWATAN GIGI</div>
-        <div class="promo-sub">MURAH & TERPERCAYA!</div>
-        <div class="promo-free">🎁 FREE KONSULTASI</div>
-        <div class="promo-prices">
-          <div class="price-item"><h4>SCALING</h4><div class="price">Rp149.000</div></div>
-          <div class="price-item"><h4>PENAMBALAN GIGI</h4><div class="price">Rp150.000</div></div>
-          <div class="price-item"><h4>PENCABUTAN GIGI SUSU</h4><div class="price">Rp120.000</div></div>
-        </div>
-        <div class="wa-number">
-          <i class="fab fa-whatsapp"></i> Hubungi: <span>0857-9248-1951</span>
-        </div>
-      </div>
+    <div class="hero-image">
+      <img src="1000482326.jpg" alt="Promo Baitussayam Dental Care - FREE Konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000">
     </div>
   </div>
 </section>
 
-<!-- Services Section dengan harga -->
+<!-- Services Section -->
 <section class="section" id="services">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
@@ -664,9 +579,9 @@
       <p>Ribuan pasien puas dengan pelayanan kami.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;">
-      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Scaling murah & hasil bersih! Dokter ramah, klinik bersih. Puas banget!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Anita, Bekasi</div></div>
-      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Anak saya cabut gigi susu tidak takut, proses cepat dan murah. Rekomended!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Budi, Bekasi</div></div>
-      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Penambalan gigi rapi, gratis konsultasi. Harga bersahabat, pelayanan terbaik!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Siti, Bekasi</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Scaling murah & hasil bersih! Dokter ramah, klinik bersih. Puas banget!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Anita, Bekasi</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Anak saya cabut gigi susu tidak takut, proses cepat dan murah. Rekomended!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Budi, Bekasi</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Penambalan gigi rapi, gratis konsultasi. Harga bersahabat, pelayanan terbaik!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Siti, Bekasi</div></div>
     </div>
   </div>
 </section>
