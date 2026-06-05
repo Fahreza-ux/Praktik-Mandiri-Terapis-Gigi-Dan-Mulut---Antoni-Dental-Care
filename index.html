@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Baitussayam Dental Care | Klinik Gigi Modern & Terpercaya</title>
+  <title>Baitussayam Dental Care | Perawatan Gigi Murah & Terpercaya</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -89,6 +89,16 @@
       color: #0f2b3d;
     }
 
+    .btn-wa {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-wa:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
     /* navbar */
     .navbar {
       position: sticky;
@@ -115,7 +125,7 @@
     }
 
     .logo img {
-      height: 45px;
+      height: 50px;
       width: auto;
       object-fit: contain;
     }
@@ -141,7 +151,7 @@
 
     @media (min-width: 480px) {
       .logo img {
-        height: 50px;
+        height: 55px;
       }
       .logo-text .name {
         font-size: 1.4rem;
@@ -169,7 +179,7 @@
       color: #2b7a62;
     }
 
-    /* Mobile menu button (titik tiga) */
+    /* Mobile menu button */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -178,14 +188,18 @@
       cursor: pointer;
       color: #0f2b3d;
       padding: 8px;
-      transition: 0.2s;
     }
 
-    .mobile-menu-btn:hover {
-      color: #2b7a62;
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
     }
 
-    /* Mobile drawer sidebar */
+    /* Mobile drawer */
     .mobile-drawer {
       position: fixed;
       top: 0;
@@ -216,7 +230,6 @@
       border: none;
       font-size: 1.8rem;
       cursor: pointer;
-      color: #1e2f3d;
     }
 
     .drawer-links {
@@ -234,14 +247,9 @@
       border-bottom: 1px solid #ecf0f3;
     }
 
-    .drawer-links a:hover {
-      color: #2b7a62;
-    }
-
     .drawer-btn {
       margin-top: 20px;
       width: 100%;
-      justify-content: center;
     }
 
     .overlay {
@@ -259,18 +267,9 @@
       display: block;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-    }
-
-    /* hero */
+    /* Hero Section dengan promo card */
     .hero {
-      padding: 40px 0 60px 0;
+      padding: 40px 0 60px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
     }
 
@@ -286,9 +285,9 @@
         align-items: center;
       }
       .hero-content {
-        flex: 1.2;
+        flex: 1;
       }
-      .hero-image {
+      .hero-promo {
         flex: 1;
       }
     }
@@ -320,34 +319,87 @@
       }
     }
 
-    @media (min-width: 1024px) {
-      .hero-content h1 {
-        font-size: 3.2rem;
-      }
-    }
-
     .hero-content p {
       font-size: 1rem;
       color: #3a5468;
       margin-bottom: 28px;
     }
 
-    .hero-stats {
-      display: flex;
-      gap: 24px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item h3 {
-      font-size: 1.5rem;
-      color: #2b7a62;
-    }
-
-    .hero-image img {
-      max-width: 100%;
+    /* Promo Card - dari gambar */
+    .promo-card {
+      background: white;
       border-radius: 28px;
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+      padding: 24px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+      border: 1px solid #e0f0ea;
+    }
+
+    .promo-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f2b3d;
+      margin-bottom: 8px;
+    }
+
+    .promo-sub {
+      color: #2b7a62;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .promo-free {
+      background: #ff6b6b;
+      color: white;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .promo-prices {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .price-item {
+      text-align: center;
+      padding: 12px 8px;
+      background: #f8faf7;
+      border-radius: 16px;
+    }
+
+    .price-item h4 {
+      font-size: 0.8rem;
+      color: #4a6a7a;
+      margin-bottom: 6px;
+    }
+
+    .price-item .price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0f2b3d;
+    }
+
+    .wa-number {
+      background: #f0f7f4;
+      border-radius: 40px;
+      padding: 12px 16px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .wa-number i {
+      color: #25D366;
+      margin-right: 8px;
+    }
+
+    .wa-number span {
+      font-weight: 700;
+      font-size: 1.1rem;
     }
 
     /* services grid */
@@ -378,6 +430,13 @@
       margin-bottom: 16px;
     }
 
+    .service-price {
+      color: #2b7a62;
+      font-weight: 700;
+      margin-top: 12px;
+      font-size: 1.1rem;
+    }
+
     /* about */
     .about-flex {
       display: flex;
@@ -392,19 +451,6 @@
       }
     }
 
-    .about-text {
-      flex: 1;
-    }
-
-    .about-img {
-      flex: 1;
-    }
-
-    .about-img img {
-      width: 100%;
-      border-radius: 28px;
-    }
-
     .feature-list {
       list-style: none;
       margin-top: 20px;
@@ -417,32 +463,6 @@
       gap: 12px;
     }
 
-    /* testimonial */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 640px) {
-      .testimonial-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-    }
-
-    .testimonial-card {
-      background: white;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    }
-
-    .stars {
-      color: #f9b43a;
-      margin-bottom: 12px;
-    }
-
     /* cta */
     .cta-section {
       background: #0f2b3d;
@@ -451,18 +471,6 @@
       margin: 40px auto 60px;
       padding: 48px 24px;
       text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .cta-section {
-        padding: 64px 48px;
-        margin: 40px auto 80px;
-      }
-    }
-
-    .btn-cta {
-      background: white;
-      color: #0f2b3d;
     }
 
     /* footer */
@@ -486,21 +494,11 @@
       }
     }
 
-    .footer-col h4 {
-      margin-bottom: 16px;
-      color: #0f2b3d;
-    }
-
     .socials i {
       font-size: 1.4rem;
       margin-right: 18px;
       color: #2b7a62;
       cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .socials i:hover {
-      color: #0f2b3d;
     }
 
     .copyright {
@@ -530,33 +528,6 @@
       border-radius: 32px;
       padding: 28px 24px;
       position: relative;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .modal-content h3 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      color: #0f2b3d;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group input, 
-    .form-group select {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 30px;
-      border: 1px solid #cfdfd7;
-      font-family: inherit;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    .form-group input:focus {
-      border-color: #2b7a62;
     }
 
     .close-modal {
@@ -565,7 +536,19 @@
       right: 24px;
       font-size: 28px;
       cursor: pointer;
-      line-height: 1;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 30px;
+      border: 1px solid #cfdfd7;
+      font-family: inherit;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -575,7 +558,7 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <img src="logo.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none';">
+      <img src="logo2.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none';">
       <div class="logo-text">
         <span class="name">Baitussayam</span>
         <span class="care">DENTAL CARE</span>
@@ -586,7 +569,7 @@
       <a href="#services">Layanan</a>
       <a href="#about">Tentang</a>
       <a href="#testimonials">Testimoni</a>
-      <button class="btn btn-primary" id="openModalBtnDesktop" style="padding: 8px 20px;">Booking</button>
+      <button class="btn btn-primary" id="openModalBtnDesktop">Booking</button>
     </div>
     <button class="mobile-menu-btn" id="mobileMenuBtn">
       <i class="fas fa-ellipsis-h"></i>
@@ -609,38 +592,46 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section -->
+<!-- Hero Section dengan Promo -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-tooth"></i> Baitussayam Dental Care</div>
-      <h1>Senyum Sehat, <br><span>Percaya Diri Maksimal</span></h1>
-      <p>Gabungkan teknologi terkini dengan perawatan personal — pengalaman dental care yang bebas rasa cemas dan hasil optimal. Klinik gigi modern terpercaya di Indonesia.</p>
-      <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Buat Janji</button>
-      <div class="hero-stats">
-        <div class="stat-item"><h3>5000+</h3><p>Pasien Puas</p></div>
-        <div class="stat-item"><h3>15+</h3><p>Dokter Spesialis</p></div>
-        <div class="stat-item"><h3>4.9</h3><p>Rating Google</p></div>
-      </div>
+      <div class="hero-badge"><i class="fas fa-tooth"></i> Yayasan Baitussayam Mulya Bekasi</div>
+      <h1>Senyum Sehat, <br><span>Perawatan Gigi Murah & Terpercaya!</span></h1>
+      <p>Klinik gigi modern dengan harga terjangkau. Teknologi terbaik & dokter berpengalaman.</p>
+      <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Booking Sekarang</button>
+      <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px; display: inline-flex;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
-    <div class="hero-image">
-      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=Baitussayam+Dental+Care" alt="Baitussayam Dental Care">
+    <div class="hero-promo">
+      <div class="promo-card">
+        <div class="promo-title">✨ PERAWATAN GIGI</div>
+        <div class="promo-sub">MURAH & TERPERCAYA!</div>
+        <div class="promo-free">🎁 FREE KONSULTASI</div>
+        <div class="promo-prices">
+          <div class="price-item"><h4>SCALING</h4><div class="price">Rp149.000</div></div>
+          <div class="price-item"><h4>PENAMBALAN GIGI</h4><div class="price">Rp150.000</div></div>
+          <div class="price-item"><h4>PENCABUTAN GIGI SUSU</h4><div class="price">Rp120.000</div></div>
+        </div>
+        <div class="wa-number">
+          <i class="fab fa-whatsapp"></i> Hubungi: <span>0857-9248-1951</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
+<!-- Services Section dengan harga -->
 <section class="section" id="services">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
       <h2>Layanan Unggulan Kami</h2>
-      <p>Teknologi mutakhir & tim berpengalaman untuk setiap masalah gigi Anda.</p>
+      <p>Harga terjangkau & kualitas terbaik untuk kesehatan gigi Anda.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi dengan teknologi ultrasonic, hasil lebih bersih & nyaman.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Veneer Estetik</h3><p>Lapisan porselen tipis untuk senyum sempurna dan natural.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Kawat Gigi (Behel)</h3><p>Perataan gigi dengan sistem self-ligating modern, hasil cepat dan minim rasa sakit.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3>Whitening Laser</h3><p>Pemutihan gigi instan dengan laser, aman dan hasil tahan lama.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi dengan teknologi ultrasonic.</p><div class="service-price">Rp149.000</div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-fill-drip"></i></div><h3>Penambalan Gigi</h3><p>Tambal gigi berlubang dengan bahan berkualitas.</p><div class="service-price">Rp150.000</div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-tooth"></i></div><h3>Cabut Gigi Susu</h3><p>Proses cepat, aman & nyaman untuk anak.</p><div class="service-price">Rp120.000</div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Konsultasi Gratis</h3><p>Konsultasi dengan dokter gigi spesialis.</p><div class="service-price">FREE</div></div>
     </div>
   </div>
 </section>
@@ -649,18 +640,18 @@
 <section class="section section-light" id="about">
   <div class="container about-flex">
     <div class="about-text">
-      <h2>Baitussayam Dental Care</h2>
-      <p>Klinik dengan standar internasional yang mengutamakan kenyamanan dan keamanan. Kami menggabungkan teknologi digital (CBCT, intraoral scanner) dengan pendekatan humanis.</p>
+      <h2>Yayasan Baitussayam Mulya Bekasi</h2>
+      <p>Klinik gigi terpercaya di Bekasi dengan pelayanan ramah, harga bersahabat, dan teknologi modern. Kami berkomitmen memberikan perawatan gigi terbaik untuk seluruh keluarga.</p>
       <ul class="feature-list">
-        <li><i class="fas fa-check-circle"></i> Dokter gigi spesialis & bersertifikat</li>
-        <li><i class="fas fa-check-circle"></i> Alat sterilisasi standar rumah sakit</li>
-        <li><i class="fas fa-check-circle"></i> Ruangan nyaman & music therapy</li>
-        <li><i class="fas fa-check-circle"></i> Konsultasi gratis pertama</li>
+        <li><i class="fas fa-check-circle"></i> FREE konsultasi pertama</li>
+        <li><i class="fas fa-check-circle"></i> Harga terjangkau & transparan</li>
+        <li><i class="fas fa-check-circle"></i> Dokter gigi berpengalaman</li>
+        <li><i class="fas fa-check-circle"></i> Alat steril & ruangan nyaman</li>
       </ul>
-      <button class="btn btn-outline" id="aboutBookBtn"><i class="fas fa-phone-alt"></i> Konsultasi Sekarang</button>
+      <a href="https://wa.me/6285792481951" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
     </div>
     <div class="about-img">
-      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam">
+      <img src="https://placehold.co/500x400/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam" style="width:100%; border-radius:28px;">
     </div>
   </div>
 </section>
@@ -668,24 +659,24 @@
 <!-- Testimonials -->
 <section class="section" id="testimonials">
   <div class="container">
-    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+    <div style="text-align: center;">
       <h2>Apa Kata Pasien Kami</h2>
-      <p>Ribuan senyum berhasil kami ciptakan dengan perawatan terbaik.</p>
+      <p>Ribuan pasien puas dengan pelayanan kami.</p>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Pengalaman scaling paling nyaman! Dokter sangat sabar dan hasil gigi bersih sempurna. Suasana klinik bikin rileks."</p><div class="client-name">— Amanda, 28</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Setelah pasang behel di Baitussayam, progress gigi terlihat cepat. Teknologi modern dan konsultasi terjadwal rapi."</p><div class="client-name">— Dimas, 24</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">"Whitening laser hasilnya wow! Gigiku lebih putih 3 shade dalam 1 sesi. Tim resepsionis ramah banget."</p><div class="client-name">— Sarah, 32</div></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;">
+      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Scaling murah & hasil bersih! Dokter ramah, klinik bersih. Puas banget!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Anita, Bekasi</div></div>
+      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Anak saya cabut gigi susu tidak takut, proses cepat dan murah. Rekomended!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Budi, Bekasi</div></div>
+      <div class="testimonial-card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.04);"><div class="stars" style="color:#f9b43a;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Penambalan gigi rapi, gratis konsultasi. Harga bersahabat, pelayanan terbaik!"</p><div class="client-name" style="margin-top:12px; font-weight:700;">— Siti, Bekasi</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA Booking -->
-<section class="container" id="contact">
+<!-- CTA -->
+<section class="container">
   <div class="cta-section">
-    <h2>Siap untuk Senyum Impian?</h2>
-    <p>Dapatkan konsultasi gratis & pemeriksaan lengkap senilai Rp250.000 untuk pendaftar pertama di Baitussayam Dental Care.</p>
-    <button class="btn btn-cta" id="ctaBookBtn"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
+    <h2>Siap untuk Senyum Sehat?</h2>
+    <p>Dapatkan FREE konsultasi & harga spesial untuk pendaftar pertama!</p>
+    <button class="btn btn-cta" id="ctaBookBtn" style="background:white; color:#0f2b3d;"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
   </div>
 </section>
 
@@ -693,11 +684,11 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 88, Jakarta Selatan</p><p><i class="fas fa-phone"></i> (021) 2345-6789</p><p><i class="fas fa-envelope"></i> hello@baitussayam.id</p></div>
-      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu & Libur Nasional : 10:00 - 15:00</p></div>
-      <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-tiktok"></i><i class="fab fa-whatsapp"></i></div></div>
+      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Yayasan Baitussayam Mulya, Bekasi</p><p><i class="fas fa-phone"></i> 0857-9248-1951</p></div>
+      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu : 10:00 - 15:00</p></div>
+      <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-whatsapp"></i></div></div>
     </div>
-    <div class="copyright">© 2025 Baitussayam Dental Care — Merawat Senyum Indonesia</div>
+    <div class="copyright">© 2025 Baitussayam Dental Care — Perawatan Gigi Murah & Terpercaya</div>
   </div>
 </footer>
 
@@ -706,103 +697,57 @@
   <div class="modal-content">
     <span class="close-modal" id="closeModalBtn">&times;</span>
     <h3>Booking Kunjungan</h3>
-    <p style="margin-bottom: 20px;">Isi data Anda, tim Baitussayam akan menghubungi maksimal 1x24 jam.</p>
+    <p style="margin-bottom:20px;">Isi data, tim kami akan hubungi via WA.</p>
     <form id="bookingForm">
       <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
       <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
-      <div class="form-group"><select id="serviceSelect"><option value="Konsultasi Gratis">Konsultasi Gratis</option><option value="Scaling & Polish">Scaling & Polish</option><option value="Veneer Estetik">Veneer Estetik</option><option value="Kawat Gigi">Kawat Gigi</option><option value="Whitening Laser">Whitening Laser</option></select></div>
+      <div class="form-group"><select id="serviceSelect"><option value="Konsultasi Gratis">Konsultasi Gratis</option><option value="Scaling Rp149.000">Scaling Rp149.000</option><option value="Penambalan Gigi Rp150.000">Penambalan Gigi Rp150.000</option><option value="Cabut Gigi Susu Rp120.000">Cabut Gigi Susu Rp120.000</option></select></div>
       <div class="form-group"><input type="date" id="datePick" required></div>
-      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Kirim Booking</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Kirim Booking</button>
     </form>
-    <p style="font-size: 12px; margin-top: 16px; text-align: center;">*Gratis konsultasi untuk semua layanan</p>
   </div>
 </div>
 
 <script>
-  // Mobile drawer
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
   const overlay = document.getElementById('overlay');
 
-  function openDrawer() {
-    mobileDrawer.classList.add('open');
-    overlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeDrawer() {
-    mobileDrawer.classList.remove('open');
-    overlay.classList.remove('show');
-    document.body.style.overflow = '';
-  }
+  function openDrawer() { mobileDrawer.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
+  function closeDrawer() { mobileDrawer.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
 
   mobileMenuBtn.addEventListener('click', openDrawer);
   closeDrawerBtn.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
 
   document.querySelectorAll('.drawer-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      closeDrawer();
-      const targetId = link.getAttribute('href');
-      if(targetId && targetId !== '#') {
-        e.preventDefault();
-        const targetElem = document.querySelector(targetId);
-        if(targetElem) {
-          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
+    link.addEventListener('click', (e) => { closeDrawer(); const id = link.getAttribute('href'); if(id && id!='#'){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); } });
   });
 
-  // Modal handler
   const modal = document.getElementById('bookingModal');
-  const openModalBtns = document.querySelectorAll('#openModalBtnDesktop, #openModalBtnMobile, #heroBookBtn, #aboutBookBtn, #ctaBookBtn');
+  const openModalBtns = document.querySelectorAll('#openModalBtnDesktop, #openModalBtnMobile, #heroBookBtn, #ctaBookBtn');
   const closeModalBtn = document.getElementById('closeModalBtn');
-
-  function openModal() { 
-    modal.style.display = 'flex'; 
-    closeDrawer();
-  }
+  function openModal() { modal.style.display = 'flex'; closeDrawer(); }
   function closeModal() { modal.style.display = 'none'; }
-
   openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
   closeModalBtn.addEventListener('click', closeModal);
   window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
 
-  // Booking form
-  const bookingForm = document.getElementById('bookingForm');
-  bookingForm.addEventListener('submit', (e) => {
+  document.getElementById('bookingForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('fullname').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('serviceSelect').value;
     const date = document.getElementById('datePick').value;
-
-    if(!name || !phone || !date) {
-      alert('Harap isi semua data (nama, no HP, tanggal kunjungan)');
-      return;
-    }
-    if(phone.length < 8) {
-      alert('Masukkan nomor telepon yang valid');
-      return;
-    }
-    alert(`Terima kasih ${name}! Booking untuk layanan ${service} pada tanggal ${date} telah kami terima. Tim Baitussayam Dental Care akan menghubungi Anda di ${phone} dalam 1x24 jam.`);
-    bookingForm.reset();
+    if(!name || !phone || !date) return alert('Isi semua data!');
+    alert(`Terima kasih ${name}! Booking ${service} tgl ${date} akan dikonfirmasi via WA ${phone}`);
+    e.target.reset();
     closeModal();
   });
 
-  // Smooth scroll desktop
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if(targetId === '#') return;
-      const targetElem = document.querySelector(targetId);
-      if(targetElem) {
-        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e){ e.preventDefault(); const id=this.getAttribute('href'); if(id && id!='#') document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); });
   });
 </script>
 </body>
