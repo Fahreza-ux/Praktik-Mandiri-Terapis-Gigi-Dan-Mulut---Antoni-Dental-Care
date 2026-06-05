@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SmileCare | Dental Care Modern & Terpercaya</title>
+  <title>Baitussayam Dental Care | Klinik Gigi Modern & Terpercaya</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -109,19 +109,51 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #0f2b3d;
     }
 
-    .logo span {
-      color: #2b7a62;
+    .logo-icon {
+      background: #0f2b3d;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
     }
 
-    @media (min-width: 768px) {
-      .logo {
-        font-size: 1.8rem;
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-text .name {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .logo-text .care {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2b7a62;
+      letter-spacing: 0.5px;
+    }
+
+    @media (min-width: 480px) {
+      .logo-text .name {
+        font-size: 1.4rem;
+      }
+      .logo-text .care {
+        font-size: 0.9rem;
       }
     }
 
@@ -279,20 +311,24 @@
     }
 
     .hero-content h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 16px;
       color: #0a2535;
     }
 
+    .hero-content h1 span {
+      color: #2b7a62;
+    }
+
     @media (min-width: 768px) {
       .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
       }
     }
 
     @media (min-width: 1024px) {
       .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
       }
     }
 
@@ -335,6 +371,11 @@
       text-align: center;
       transition: 0.25s;
       border: 1px solid #ecf3f0;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
     }
 
     .service-icon {
@@ -453,12 +494,19 @@
 
     .footer-col h4 {
       margin-bottom: 16px;
+      color: #0f2b3d;
     }
 
     .socials i {
       font-size: 1.4rem;
       margin-right: 18px;
       color: #2b7a62;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .socials i:hover {
+      color: #0f2b3d;
     }
 
     .copyright {
@@ -495,6 +543,7 @@
     .modal-content h3 {
       font-size: 1.6rem;
       margin-bottom: 12px;
+      color: #0f2b3d;
     }
 
     .form-group {
@@ -531,7 +580,15 @@
 <!-- Navbar -->
 <nav class="navbar">
   <div class="container nav-flex">
-    <div class="logo">Smile<span>Care</span></div>
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-tooth"></i>
+      </div>
+      <div class="logo-text">
+        <span class="name">Baitussayam</span>
+        <span class="care">DENTAL CARE</span>
+      </div>
+    </div>
     <div class="nav-links">
       <a href="#home">Beranda</a>
       <a href="#services">Layanan</a>
@@ -564,18 +621,18 @@
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-tooth"></i> Dental Care Modern</div>
-      <h1>Senyum Sehat, <br>Percaya Diri Maksimal</h1>
-      <p>Gabungkan teknologi terkini dengan perawatan personal — pengalaman dental care yang bebas rasa cemas dan hasil optimal.</p>
+      <div class="hero-badge"><i class="fas fa-tooth"></i> Baitussayam Dental Care</div>
+      <h1>Senyum Sehat, <br><span>Percaya Diri Maksimal</span></h1>
+      <p>Gabungkan teknologi terkini dengan perawatan personal — pengalaman dental care yang bebas rasa cemas dan hasil optimal. Klinik gigi modern terpercaya di Indonesia.</p>
       <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Buat Janji</button>
       <div class="hero-stats">
         <div class="stat-item"><h3>5000+</h3><p>Pasien Puas</p></div>
-        <div class="stat-item"><h3>15+</h3><p>Dokter</p></div>
-        <div class="stat-item"><h3>4.9</h3><p>Rating</p></div>
+        <div class="stat-item"><h3>15+</h3><p>Dokter Spesialis</p></div>
+        <div class="stat-item"><h3>4.9</h3><p>Rating Google</p></div>
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=SmileCare+Modern" alt="Dental Care modern">
+      <img src="https://placehold.co/600x500/eef2f0/2b7a62?text=Baitussayam+Dental+Care" alt="Baitussayam Dental Care modern">
     </div>
   </div>
 </section>
@@ -584,34 +641,34 @@
 <section class="section" id="services">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-      <h2>Layanan Unggulan</h2>
+      <h2>Layanan Unggulan Kami</h2>
       <p>Teknologi mutakhir & tim berpengalaman untuk setiap masalah gigi Anda.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi teknologi ultrasonic, nyaman & hasil maksimal.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Veneer Estetik</h3><p>Lapisan porselen tipis untuk senyum sempurna & natural.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Kawat Gigi</h3><p>Perataan gigi sistem self-ligating modern, hasil cepat & minim sakit.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3>Whitening Laser</h3><p>Pemutihan gigi instan dengan laser, aman & tahan lama.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi dengan teknologi ultrasonic, hasil lebih bersih & nyaman.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Veneer Estetik</h3><p>Lapisan porselen tipis untuk senyum sempurna dan natural.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Kawat Gigi (Behel)</h3><p>Perataan gigi dengan sistem self-ligating modern, hasil cepat dan minim rasa sakit.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3>Whitening Laser</h3><p>Pemutihan gigi instan dengan laser, aman dan hasil tahan lama.</p></div>
     </div>
   </div>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 <section class="section section-light" id="about">
   <div class="container about-flex">
     <div class="about-text">
-      <h2>Klinik Standar Internasional</h2>
-      <p>SmileCare hadir sebagai solusi dental modern yang mengutamakan kenyamanan & keamanan. Teknologi digital + pendekatan humanis.</p>
+      <h2>Baitussayam Dental Care</h2>
+      <p>Klinik dengan standar internasional yang mengutamakan kenyamanan dan keamanan. Kami menggabungkan teknologi digital (CBCT, intraoral scanner) dengan pendekatan humanis.</p>
       <ul class="feature-list">
-        <li><i class="fas fa-check-circle"></i> Dokter spesialis bersertifikat</li>
-        <li><i class="fas fa-check-circle"></i> Alat sterilisasi standar RS</li>
+        <li><i class="fas fa-check-circle"></i> Dokter gigi spesialis & bersertifikat</li>
+        <li><i class="fas fa-check-circle"></i> Alat sterilisasi standar rumah sakit</li>
         <li><i class="fas fa-check-circle"></i> Ruangan nyaman & music therapy</li>
         <li><i class="fas fa-check-circle"></i> Konsultasi gratis pertama</li>
       </ul>
       <button class="btn btn-outline" id="aboutBookBtn"><i class="fas fa-phone-alt"></i> Konsultasi Sekarang</button>
     </div>
     <div class="about-img">
-      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Nyaman" alt="Klinik modern">
+      <img src="https://placehold.co/600x500/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam modern">
     </div>
   </div>
 </section>
@@ -619,14 +676,14 @@
 <!-- Testimonials -->
 <section class="section" id="testimonials">
   <div class="container">
-    <div style="text-align: center;">
-      <h2>Apa Kata Pasien</h2>
-      <p>Ribuan senyum berhasil kami ciptakan.</p>
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <h2>Apa Kata Pasien Kami</h2>
+      <p>Ribuan senyum berhasil kami ciptakan dengan perawatan terbaik.</p>
     </div>
     <div class="testimonial-grid">
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Scaling paling nyaman! Dokter sabar, hasil bersih sempurna. Klinik bikin rileks."</p><div class="client-name">— Amanda, 28</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Behel di SmileCare, progress cepat. Teknologi modern & konsultasi terjadwal rapi."</p><div class="client-name">— Dimas, 24</div></div>
-      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">"Whitening laser wow! Gigi lebih putih 3 shade dalam 1 sesi. Resepsionis ramah."</p><div class="client-name">— Sarah, 32</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Pengalaman scaling paling nyaman! Dokter sangat sabar dan hasil gigi bersih sempurna. Suasana klinik bikin rileks."</p><div class="client-name">— Amanda, 28</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Setelah pasang behel di Baitussayam, progress gigi terlihat cepat. Teknologi modern dan konsultasi terjadwal rapi."</p><div class="client-name">— Dimas, 24</div></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">"Whitening laser hasilnya wow! Gigiku lebih putih 3 shade dalam 1 sesi. Tim resepsionis ramah banget."</p><div class="client-name">— Sarah, 32</div></div>
     </div>
   </div>
 </section>
@@ -635,7 +692,7 @@
 <section class="container" id="contact">
   <div class="cta-section">
     <h2>Siap untuk Senyum Impian?</h2>
-    <p>Konsultasi gratis + pemeriksaan lengkap senilai Rp250.000 untuk pendaftar pertama.</p>
+    <p>Dapatkan konsultasi gratis & pemeriksaan lengkap senilai Rp250.000 untuk pendaftar pertama di Baitussayam Dental Care.</p>
     <button class="btn btn-cta" id="ctaBookBtn"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
   </div>
 </section>
@@ -644,11 +701,11 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4>SmileCare Dental</h4><p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 88, Jakarta Selatan</p><p><i class="fas fa-phone"></i> (021) 2345-6789</p><p><i class="fas fa-envelope"></i> hello@smilecare.id</p></div>
-      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu & Libur : 10:00 - 15:00</p></div>
+      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 88, Jakarta Selatan</p><p><i class="fas fa-phone"></i> (021) 2345-6789</p><p><i class="fas fa-envelope"></i> hello@baitussayam.id</p></div>
+      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu & Libur Nasional : 10:00 - 15:00</p></div>
       <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-tiktok"></i><i class="fab fa-whatsapp"></i></div></div>
     </div>
-    <div class="copyright">© 2025 SmileCare Modern Dental — Merawat Senyum Indonesia</div>
+    <div class="copyright">© 2025 Baitussayam Dental Care — Merawat Senyum Indonesia</div>
   </div>
 </footer>
 
@@ -657,7 +714,7 @@
   <div class="modal-content">
     <span class="close-modal" id="closeModalBtn">&times;</span>
     <h3>Booking Kunjungan</h3>
-    <p style="margin-bottom: 20px;">Isi data, tim kami akan hubungi maksimal 1x24 jam.</p>
+    <p style="margin-bottom: 20px;">Isi data Anda, tim Baitussayam akan menghubungi maksimal 1x24 jam.</p>
     <form id="bookingForm">
       <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
       <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
@@ -714,7 +771,7 @@
 
   function openModal() { 
     modal.style.display = 'flex'; 
-    closeDrawer(); // jika drawer terbuka, tutup otomatis
+    closeDrawer();
   }
   function closeModal() { modal.style.display = 'none'; }
 
@@ -739,7 +796,7 @@
       alert('Masukkan nomor telepon yang valid');
       return;
     }
-    alert(`Terima kasih ${name}! Booking untuk layanan ${service} pada tanggal ${date} telah kami terima. Tim SmileCare akan menghubungi Anda di ${phone} dalam 1x24 jam.`);
+    alert(`Terima kasih ${name}! Booking untuk layanan ${service} pada tanggal ${date} telah kami terima. Tim Baitussayam Dental Care akan menghubungi Anda di ${phone} dalam 1x24 jam.`);
     bookingForm.reset();
     closeModal();
   });
