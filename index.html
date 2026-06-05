@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+    <!-- Navigasi -->
     <header>
         <nav>
-            <div class="logo"><img src="logo.jpg" alt="Logo"></div>
+            <div class="logo"><img src="logo.jpg" alt="Logo Baitussayam"></div>
             <ul>
-                <li><a href="#beranda">Home</a></li>
+                <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#dokter">Praktisi</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#kontak">Kontak</a></li>
             </ul>
         </nav>
@@ -21,31 +25,102 @@
     <!-- Slider Section -->
     <section id="beranda" class="slider-container">
         <div class="mySlides fade">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ff5372bf9a7?w=1200" style="width:100%">
-            <div class="text-overlay"><h1>Klinik Gigi Profesional</h1></div>
+            <img src="https://images.unsplash.com/photo-1588776814546-1ff5372bf9a7?w=1200" alt="Slide 1">
+            <div class="text-overlay">
+                <h1>Klinik Kesehatan Gigi</h1>
+                <h2>Baitussayam Dental Care</h2>
+                <a href="#kontak" class="btn">Buat Janji Temu</a>
+            </div>
         </div>
         <div class="mySlides fade">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200" style="width:100%">
-            <div class="text-overlay"><h1>Pelayanan Islami & Amanah</h1></div>
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200" alt="Slide 2">
+            <div class="text-overlay">
+                <h1>Pelayanan Profesional</h1>
+                <h2>Terpercaya & Islami</h2>
+                <a href="#kontak" class="btn">Buat Janji Temu</a>
+            </div>
         </div>
     </section>
+
+    <!-- Bagian Layanan -->
+    <section id="layanan" class="services">
+        <h2>Layanan Kami</h2>
+        <div class="service-cards">
+            <div class="card"><h3>Pemeriksaan Rutin</h3><p>Pemeriksaan kesehatan menyeluruh untuk senyum sehat.</p></div>
+            <div class="card"><h3>Pembersihan Karang Gigi</h3><p>Perawatan scaling untuk menjaga kesehatan gusi Anda.</p></div>
+            <div class="card"><h3>Edukasi Kesehatan</h3><p>Konsultasi cara merawat gigi yang baik dan benar.</p></div>
+        </div>
+    </section>
+
+    <!-- Bagian Praktisi -->
+    <section id="dokter" class="team">
+        <h2>Praktisi Kami</h2>
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300" alt="Dokter" class="dokter-img">
+            <h3>Antoni Dwi Saputra</h3>
+            <p>Terapis Gigi dan Mulut Profesional</p>
+        </div>
+    </section>
+
+    <!-- Bagian Testimoni -->
+    <section id="testimoni" class="testimonials">
+        <h2>Apa Kata Pasien Kami</h2>
+        <div class="testimonial-cards">
+            <div class="testi-card">
+                <p>"Pelayanan ramah dan tempatnya bersih sekali. Sangat puas!"</p>
+                <span><strong>- Budi Santoso</strong></span>
+            </div>
+            <div class="testi-card">
+                <p>"Scaling gigi nyaman, tidak ngilu. Sangat recommended."</p>
+                <span><strong>- Siti Aminah</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian FAQ -->
+    <section id="faq" class="faq">
+        <h2>Pertanyaan Sering Diajukan</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <p class="question">Q: Apakah melayani pasien umum?</p>
+                <p class="answer">A: Ya, kami melayani pasien umum dengan pendaftaran yang mudah.</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">Q: Berapa lama waktu scaling?</p>
+                <p class="answer">A: Sekitar 30-45 menit tergantung kondisi karang gigi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <section id="kontak" class="contact">
+        <h2>Hubungi Kami</h2>
+        <div class="contact-info">
+            <p><strong>WhatsApp:</strong> +62 8XX-XXXX-XXXX</p>
+            <p><strong>Instagram:</strong> @BaitussayamDental</p>
+            <p><strong>Alamat:</strong> Jl. Contoh Alamat No. 123, Jakarta</p>
+        </div>
+    </section>
+
+    <!-- Tombol WA -->
+    <a href="https://wa.me/628XXXXXXXXXX" class="whatsapp-float" target="_blank">Chat WA</a>
+
+    <footer>
+        <p>&copy; 2026 Baitussayam Dental Care.</p>
+    </footer>
 
     <!-- Script Slider -->
     <script>
         let slideIndex = 0;
-        showSlides();
         function showSlides() {
-            let i;
             let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 4000); // Ganti slide setiap 4 detik
+            setTimeout(showSlides, 4000);
         }
+        showSlides();
     </script>
-    
-    <!-- Bagian lain tetap di sini... -->
-    <!-- (Tambahkan section Layanan, Team, FAQ seperti kode sebelumnya) -->
 </body>
 </html>
