@@ -575,8 +575,8 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <img src="logo.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="logo-text" style="display: none;">
+      <img src="logo.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none';">
+      <div class="logo-text">
         <span class="name">Baitussayam</span>
         <span class="care">DENTAL CARE</span>
       </div>
@@ -719,16 +719,6 @@
 </div>
 
 <script>
-  // Fallback jika logo.png tidak ditemukan
-  const logoImg = document.querySelector('.logo img');
-  const logoText = document.querySelector('.logo-text');
-  if(logoImg) {
-    logoImg.onerror = function() {
-      this.style.display = 'none';
-      if(logoText) logoText.style.display = 'flex';
-    }
-  }
-
   // Mobile drawer
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
