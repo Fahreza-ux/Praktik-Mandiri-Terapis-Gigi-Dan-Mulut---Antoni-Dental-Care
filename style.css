@@ -10,12 +10,13 @@
 body {
     line-height: 1.6;
     color: #333;
+    background-color: #f9f9f9;
 }
 
 /* Navigasi */
 header {
     background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,38 +27,55 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 0.8rem 5%;
     max-width: 1200px;
     margin: auto;
+    flex-wrap: wrap; /* Mencegah elemen keluar batas */
 }
 
-.logo img {
-    height: 60px; /* Menyesuaikan tinggi logo agar pas di navbar */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 55px; /* Membatasi tinggi logo agar proporsional */
     width: auto;
+    max-width: 150px; /* Mencegah logo terlalu melebar */
+    object-fit: contain; /* Memastikan logo tidak gepeng */
     display: block;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0c2b5b; 
+    white-space: nowrap; /* Mencegah teks logo turun ke baris baru */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #0b2b5a; /* Biru Navy dari logo */
-    font-weight: 600;
+    color: #333;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #cca43b; /* Warna Emas dari logo */
+    color: #cca43b; /* Emas dari logo */
 }
 
 /* Hero Section */
 .hero {
-    /* Overlay menggunakan warna Biru Navy transparan */
-    background: linear-gradient(rgba(11, 43, 90, 0.8), rgba(11, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    /* Overlay biru transparan */
+    background: linear-gradient(rgba(12, 43, 91, 0.7), rgba(12, 43, 91, 0.7)), 
+                url('image_hero_antoni.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -69,22 +87,16 @@ nav ul li a:hover {
 }
 
 .hero-content h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    color: #cca43b; /* Warna Emas untuk heading 1 */
-}
-
-.hero-content h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    max-width: 650px;
+    margin-bottom: 2rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -92,7 +104,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 35px;
-    background: #cca43b; /* Warna Emas */
+    background: #cca43b; /* Emas */
     color: #ffffff;
     text-decoration: none;
     border-radius: 30px;
@@ -103,13 +115,13 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background: #b38d2f; /* Emas sedikit lebih gelap saat dihover */
+    background: #b38d2f; /* Emas lebih gelap saat dihover */
     transform: translateY(-2px);
 }
 
 /* Section Umum */
 .services, .contact {
-    padding: 5rem 5%;
+    padding: 6rem 5%;
     max-width: 1200px;
     margin: auto;
     text-align: center;
@@ -117,8 +129,8 @@ nav ul li a:hover {
 
 .services h2, .contact h2 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #0b2b5a; /* Biru Navy */
+    margin-bottom: 3.5rem;
+    color: #0c2b5b; /* Biru Tua */
 }
 
 /* Card Layanan */
@@ -131,63 +143,69 @@ nav ul li a:hover {
 
 .card {
     background: #ffffff;
-    padding: 2.5rem 1.5rem;
-    border-radius: 10px;
-    width: 320px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s, border-bottom 0.3s;
-    border-bottom: 4px solid transparent;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border: 1px solid #e1e1e1;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    border-bottom: 4px solid #cca43b; /* Aksen emas saat dihover */
 }
 
 .card h3 {
-    color: #0b2b5a; /* Biru Navy */
-    margin-bottom: 1rem;
+    color: #0c2b5b; /* Biru Tua */
+    margin-bottom: 1.2rem;
     font-size: 1.4rem;
 }
 
 /* Kontak */
 .contact-info {
-    margin-top: 2rem;
     font-size: 1.1rem;
     line-height: 2;
-    background: #f4f7f6;
-    padding: 2rem;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.contact-info p strong {
-    color: #0b2b5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Footer */
 footer {
-    background: #0b2b5a; /* Biru Navy untuk Footer */
+    background: #0c2b5b; /* Biru Tua */
     color: #fff;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
 }
 
 /* Responsif untuk HP */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
+        flex-direction: column; /* Mengubah susunan menjadi atas-bawah di HP */
+        justify-content: center;
         gap: 1rem;
+        padding: 1rem;
     }
-    .hero-content h2 {
-        font-size: 2.5rem;
+    
+    .logo-container {
+        justify-content: center;
+        width: 100%;
     }
+
+    nav ul {
+        gap: 1.2rem;
+        font-size: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Penyesuaian margin hero agar tidak tertutup navbar yang menebal di HP */
+    .hero {
+        margin-top: 100px; 
+    }
+
     .hero-content h1 {
-        font-size: 1.5rem;
-    }
-    .contact-info {
-        text-align: center;
+        font-size: 2rem;
     }
 }
