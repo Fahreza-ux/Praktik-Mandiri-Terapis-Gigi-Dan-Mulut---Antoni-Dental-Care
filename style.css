@@ -1,30 +1,30 @@
 /* =========================================
-   RESET & PENGATURAN DASAR
+   RESET GLOBAL & WARNA UTAMA
    ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
+    background-color: #f5f8fa;
+    color: #333333;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
 }
 
 /* =========================================
-   HEADER & NAVIGASI
+   HEADER & NAVBAR (Proporsional & Kunci Logo)
    ========================================= */
 header {
     background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 }
 
 nav {
@@ -36,64 +36,65 @@ nav {
     margin: auto;
 }
 
-/* KODE MENGUNCI LOGO AGAR TIDAK KEBESARAN */
+/* FIX: Mengunci ketat ukuran logo agar tidak meluber */
 .logo img, header img {
-    height: 45px !important;      /* Diperkecil menjadi 45px */
-    width: auto !important;       
-    max-width: 200px !important;  
-    object-fit: contain !important; 
+    height: 45px !important;       /* Tinggi logo presisi & ideal */
+    width: auto !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
     display: block !important;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #0b2b5a; /* Biru Navy */
+    color: #0b2b5a; /* Biru Navy Utama */
     font-weight: 600;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #cca43b; /* Warna Emas */
+    color: #cca43b; /* Aksen Emas */
 }
 
 /* =========================================
-   SLIDER / SLIDESHOW BERANDA
+   BANNER BANNER SLIDER BERANDA
    ========================================= */
 .slider-container {
     position: relative;
-    margin-top: 65px; /* Sesuai dengan tinggi navbar baru */
-    height: 70vh; /* Mengisi 70% tinggi layar, tidak terlalu penuh */
+    margin-top: 65px; /* Sesuai tinggi navbar */
+    height: 65vh;     /* Tinggi banner proporsional, tidak kebesaran */
     overflow: hidden;
-    background-color: #0b2b5a;
+    background: #0b2b5a;
 }
 
 .mySlides {
     display: none;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .mySlides img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    filter: brightness(0.5); /* Menggelapkan gambar agar teks terbaca jelas */
+    filter: brightness(0.45); /* Efek redup agar teks kontras terang */
 }
 
-/* Efek Transisi Animasi Slider */
+/* Animasi Fade */
 .fade {
-    animation: fadeEffect 1.5s;
+    animation: fadeEffect 1.2s ease-in-out;
 }
-
 @keyframes fadeEffect {
-    from {opacity: .4} 
-    to {opacity: 1}
+    from { opacity: 0.4; }
+    to { opacity: 1; }
 }
 
 .text-overlay {
@@ -101,283 +102,260 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #ffffff;
     text-align: center;
-    width: 80%;
+    width: 85%;
     max-width: 800px;
 }
 
 .text-overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #cca43b; /* Emas */
+    font-size: 2.8rem;
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 .text-overlay h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #cca43b; /* Warna Emas */
+    margin-bottom: 1rem;
 }
 
-/* Tombol */
-.btn {
+.text-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.btn-primary {
     display: inline-block;
     padding: 12px 35px;
-    background: #cca43b; /* Emas */
+    background-color: #cca43b;
     color: #ffffff;
     text-decoration: none;
+    font-weight: 700;
     border-radius: 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
     transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.btn:hover {
-    background: #b38d2f; 
+.btn-primary:hover {
+    background-color: #b38d2f;
     transform: translateY(-2px);
 }
 
 /* =========================================
-   PENGATURAN SECTION UMUM
+   SECTION LOKASI / CABANG (GAYA DAMESSA)
    ========================================= */
-.services, .contact, .team, .testimonials, .faq {
+.location-section {
     padding: 5rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-header h2 {
+    font-size: 2.3rem;
+    color: #0b2b5a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: #666666;
+    font-size: 1.1rem;
+}
+
+/* Grid Susunan Kartu Cabang */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Kartu Desain Premium */
+.location-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(11, 43, 90, 0.04);
+    border: 1px solid #eef2f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(11, 43, 90, 0.08);
+}
+
+.card-img-wrapper {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.8rem;
+}
+
+.card-body h3 {
+    color: #0b2b5a;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.card-body .address {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    min-height: 48px; /* Menjaga tinggi seimbang */
+}
+
+.card-body .hours {
+    font-size: 0.9rem;
+    color: #444444;
+    margin-bottom: 1.5rem;
+}
+
+/* Tombol Aksi Ganda */
+.card-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-maps, .btn-wa {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn-maps {
+    background-color: #f0f4f8;
+    color: #0b2b5a;
+    border: 1px solid #d0deec;
+}
+
+.btn-wa {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.btn-maps:hover, .btn-wa:hover {
+    opacity: 0.85;
+}
+
+/* =========================================
+   LAYANAN, TESTIMONI, & FAQ
+   ========================================= */
+.services-section, .testimonials-section, .faq-section {
+    padding: 4.5rem 5%;
     max-width: 1200px;
     margin: auto;
     text-align: center;
 }
 
-h2 {
-    font-size: 2.5rem;
+.services-section h2, .testimonials-section h2, .faq-section h2 {
+    color: #0b2b5a;
     margin-bottom: 3rem;
-    color: #0b2b5a; /* Biru Navy */
+    font-size: 2rem;
 }
 
-/* =========================================
-   KARTU LAYANAN KAMI
-   ========================================= */
-.service-cards {
+.service-grid, .testimonial-grid {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.card {
+.service-item, .testi-box, .faq-card {
     background: #ffffff;
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    border-bottom: 4px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-bottom: 4px solid #cca43b;
-}
-
-.card h3 {
-    color: #0b2b5a; 
-    margin-bottom: 1.2rem;
-    font-size: 1.4rem;
-}
-
-/* =========================================
-   PROFIL PRAKTISI
-   ========================================= */
-.team-card {
-    background: #ffffff;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    display: inline-block;
-    text-align: center;
-}
-
-.dokter-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 4px solid #cca43b;
-}
-
-.team-card h3 {
-    color: #0b2b5a;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.team-card p {
-    color: #777;
-    font-weight: 500;
-}
-
-/* =========================================
-   TESTIMONI PASIEN
-   ========================================= */
-.testimonial-cards {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.testi-card {
-    background: #ffffff;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    width: 350px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    font-style: italic;
-}
-
-.testi-card p {
-    margin-bottom: 1.5rem;
-    color: #555;
-}
-
-.testi-card span {
-    color: #cca43b;
-    font-style: normal;
-    font-weight: bold;
-}
-
-/* =========================================
-   FAQ TANYA JAWAB
-   ========================================= */
-.faq-list {
-    max-width: 800px;
-    margin: auto;
+    padding: 2.2rem 1.8rem;
+    border-radius: 12px;
+    width: 340px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     text-align: left;
 }
 
-.faq-item {
-    background: #ffffff;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+.service-item h3 { color: #0b2b5a; margin-bottom: 1rem; font-size: 1.2rem; }
+.testi-box p { font-style: italic; margin-bottom: 1rem; color: #555; }
+.testi-box h4 { color: #cca43b; font-size: 0.95rem; }
 
-.faq-item .question {
-    font-weight: 700;
-    color: #0b2b5a;
-    margin-bottom: 0.5rem;
-}
-
-.faq-item .answer {
-    color: #555;
-}
+.faq-container { max-width: 800px; margin: auto; }
+.faq-card { width: 100%; margin-bottom: 1rem; }
+.faq-card h4 { color: #0b2b5a; margin-bottom: 0.5rem; }
 
 /* =========================================
-   KONTAK
+   FLOATING ACTION WHATSAPP BUTTON
    ========================================= */
-.contact-info {
-    font-size: 1.1rem;
-    line-height: 2;
-    background: #ffffff;
-    padding: 2.5rem;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.contact-info p strong {
-    color: #0b2b5a;
-}
-
-/* =========================================
-   TOMBOL WHATSAPP MENGAPUNG
-   ========================================= */
-.whatsapp-float {
+.floating-whatsapp {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 30px;
+    right: 30px;
     background-color: #25d366;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 50px;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 9999;
-    transition: transform 0.3s;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s;
 }
-
-.whatsapp-float:hover {
-    transform: scale(1.05);
-}
+.floating-whatsapp:hover { transform: scale(1.05); }
 
 /* =========================================
    FOOTER
    ========================================= */
 footer {
-    background: #0b2b5a; 
-    color: #fff;
+    background: #0b2b5a;
+    color: #ffffff;
     text-align: center;
     padding: 2rem 0;
+    font-size: 0.9rem;
 }
 
 /* =========================================
-   RESPONSIF UNTUK TAMPILAN HP
+   RESPONSIF UNTUK HP / MOBILE LAYOUT
    ========================================= */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-    }
-    
-    .logo img, header img {
-        height: 40px !important; /* Dikecilkan lagi khusus HP */    
-        max-width: 80vw !important;  
-        margin: 0 auto !important;   
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 12px;
-        font-size: 0.9rem;
+        padding: 12px;
     }
-
-    /* Penyesuaian Slider di HP */
+    .logo img, header img {
+        height: 38px !important; /* Perkecil sedikit di HP agar hemat ruang */
+        margin: 0 auto;
+    }
+    nav ul {
+        gap: 12px;
+        font-size: 0.85rem;
+    }
     .slider-container {
-        margin-top: 90px; /* Jarak agar tidak tertutup menu yang numpuk */
-        height: 40vh; /* Lebih pendek di HP */
+        margin-top: 95px;
+        height: 45vh; /* Tidak kepanjangan di HP */
     }
-
-    .text-overlay {
-        width: 95%;
-    }
-
-    .text-overlay h1 {
-        font-size: 1.8rem;
-    }
+    .text-overlay h1 { font-size: 1.8rem; }
+    .text-overlay h2 { font-size: 1.3rem; }
+    .text-overlay p { font-size: 0.95rem; margin-bottom: 1.2rem; }
+    .btn-primary { padding: 10px 24px; font-size: 0.95rem; }
     
-    .text-overlay h2 {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-
-    .btn {
-        padding: 10px 25px;
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        text-align: center;
-        width: 100%;
-    }
+    .location-section { padding: 3rem 4%; }
+    .location-grid { grid-template-columns: 1fr; }
 }
