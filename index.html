@@ -257,9 +257,9 @@
       display: block;
     }
 
-    /* Hero dengan gambar promo di samping */
+    /* Hero dengan gambar promo di samping - RAPI DI KOMPUTER */
     .hero {
-      padding: 40px 0 40px;
+      padding: 50px 0 60px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
     }
 
@@ -273,12 +273,16 @@
       .hero-grid {
         flex-direction: row;
         align-items: center;
+        gap: 60px;
       }
       .hero-content {
         flex: 1;
       }
       .hero-image {
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
@@ -315,12 +319,32 @@
       margin-bottom: 28px;
     }
 
+    /* PERBAIKAN: Hero image dengan ukuran proporsional */
+    .hero-image {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
     .hero-image img {
-      max-width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
       width: 100%;
       height: auto;
+      max-height: 450px;
+      object-fit: contain;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+      background: white;
+      padding: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .hero-image {
+        max-width: 550px;
+      }
+      .hero-image img {
+        max-height: 480px;
+        padding: 15px;
+      }
     }
 
     /* ========== BANNER PROMO HARGA ========== */
@@ -473,7 +497,7 @@
       text-align: center;
     }
 
-    /* ========== SECTION BANNER GAMBAR PROMO (BARIS KHUSUS) ========== */
+    /* SECTION GAMBAR PROMOSI */
     .promo-images-section {
       margin: 30px auto 20px;
     }
@@ -772,7 +796,7 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section -->
+<!-- Hero Section dengan logo2.png - posisi rapi di komputer -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -783,7 +807,7 @@
       <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
     <div class="hero-image">
-      <img src="logo2.png" alt="Promo Baitussayam Dental Care" onerror="this.src='https://placehold.co/600x500/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
+      <img src="logo2.png" alt="Promo Baitussayam Dental Care" onerror="this.src='https://placehold.co/500x450/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
     </div>
   </div>
 </section>
@@ -844,7 +868,7 @@
   </div>
 </div>
 
-<!-- ========== SECTION KHUSUS GAMBAR PROMOSI (BESAR) ========== -->
+<!-- ========== SECTION GAMBAR PROMOSI (logo3,4,5) ========== -->
 <div class="container promo-images-section">
   <div class="promo-images-title">
     <h3><i class="fas fa-tags"></i> PROMO SPESIAL LAINNYA</h3>
