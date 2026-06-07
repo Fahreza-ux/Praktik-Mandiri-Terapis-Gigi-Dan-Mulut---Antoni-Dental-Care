@@ -335,7 +335,7 @@
       }
     }
 
-    /* ========== BANNER PROMO HARGA ========== */
+    /* BANNER PROMO HARGA */
     .promo-banner {
       background: linear-gradient(135deg, #0f2b3d 0%, #1a5a4a 100%);
       margin: 20px auto 0;
@@ -683,6 +683,7 @@
       font-size: 0.8rem;
     }
 
+    /* Modal Booking */
     .modal {
       display: none;
       position: fixed;
@@ -723,6 +724,21 @@
       border: 1px solid #cfdfd7;
       font-family: inherit;
       font-size: 1rem;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     .testimonial-card {
@@ -953,28 +969,95 @@
   </div>
 </footer>
 
-<!-- Modal Booking -->
+<!-- Modal Booking dengan Google Form Integration -->
 <div id="bookingModal" class="modal">
   <div class="modal-content">
     <span class="close-modal" id="closeModalBtn">&times;</span>
     <h3>Booking Kunjungan</h3>
     <p style="margin-bottom:20px;">Isi data, tim kami akan hubungi via <strong>0857-1979-2747</strong></p>
     <form id="bookingForm">
-      <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
-      <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
-      <div class="form-group"><select id="serviceSelect">
-        <option value="Konsultasi Gratis dengan dokter gigi & terapis">Konsultasi Gratis dengan dokter gigi & terapis</option>
-        <option value="Scaling Rp149.000">Scaling Rp149.000</option>
-        <option value="Penambalan Gigi Rp150.000">Penambalan Gigi Rp150.000</option>
-        <option value="Cabut Gigi Susu Rp120.000">Cabut Gigi Susu Rp120.000</option>
-      </select></div>
-      <div class="form-group"><input type="date" id="datePick" required></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;">Kirim Booking</button>
+      <div class="form-group">
+        <input type="text" id="fullname" placeholder="Nama lengkap" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Nomor WhatsApp (aktif)" required>
+      </div>
+      <div class="form-group">
+        <select id="serviceSelect" required>
+          <option value="">Pilih Layanan</option>
+          <option value="Konsultasi Gratis dengan dokter gigi & terapis">Konsultasi Gratis dengan dokter gigi & terapis</option>
+          <option value="Scaling Rp149.000">Scaling Rp149.000</option>
+          <option value="Penambalan Gigi Rp150.000">Penambalan Gigi Rp150.000</option>
+          <option value="Cabut Gigi Susu Rp120.000">Cabut Gigi Susu Rp120.000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="date" id="datePick" required>
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBookingBtn" style="width:100%;">
+        <i class="fas fa-paper-plane"></i> Kirim Booking
+      </button>
     </form>
+    <p style="font-size: 11px; text-align: center; margin-top: 16px; color: #8ba0ae;">✓ Data akan tersimpan di database kami</p>
   </div>
 </div>
 
 <script>
+  // Google Form URL (action submit)
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd-fcvHc-GqJ9yU6abNh1IrybM_oL8aqm5uaqf5QBWGyPe2_A/formResponse';
+  
+  // Mapping field Google Form (entry ID dari Google Form)
+  // Untuk mendapatkan entry ID: buka form di browser, inspect element pada input, cari name="entry.xxxxxxx"
+  // Atau menggunakan pendekatan: kirim data ke URL dengan parameter
+  
+  // Fungsi submit ke Google Form
+  async function submitToGoogleForm(formData) {
+    // Menggunakan metode fetch dengan mode no-cors (tetap mengirim meski tidak dapat response)
+    const formBody = new URLSearchParams();
+    formBody.append('entry.1126856659', formData.fullname); // Nama Lengkap
+    formBody.append('entry.592604168', formData.phone);      // Nomor Handphone  
+    formBody.append('entry.809273581', formData.service);    // Pilihan Layanan
+    formBody.append('entry.1485964101', formData.date);      // Tanggal Booking
+    
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString()
+      });
+      return true;
+    } catch (error) {
+      console.error('Error submitting to Google Form:', error);
+      return false;
+    }
+  }
+  
+  // Format pesan WhatsApp untuk notifikasi ke admin
+  function getWAAdminMessage(data) {
+    return `*🦷 BOOKING BARU - BAITUSSAYAM DENTAL CARE*%0A%0A
+*Nama:* ${data.fullname}%0A
+*No. WhatsApp:* ${data.phone}%0A
+*Layanan:* ${data.service}%0A
+*Tanggal Booking:* ${data.date}%0A%0A
+_Silakan konfirmasi ke pasien._`;
+  }
+  
+  // Format pesan WhatsApp untuk konfirmasi ke pasien
+  function getWAPasienMessage(data) {
+    return `Halo *${data.fullname}*,%0A%0A
+Terima kasih telah melakukan booking di *Baitussayam Dental Care*.%0A%0A
+Berikut detail booking Anda:%0A
+📋 Layanan: ${data.service}%0A
+📅 Tanggal: ${data.date}%0A%0A
+Booking Anda akan segera kami konfirmasi maksimal 1x24 jam.%0A%0A
+Jika ada perubahan jadwal, silakan hubungi kami.%0A%0A
+*0857-1979-2747*%0A%0A
+Salam sehat, Baitussayam Dental Care 🦷`;
+  }
+  
   // Countdown Timer (7 hari dari sekarang)
   function startCountdown() {
     const targetDate = new Date();
@@ -1044,16 +1127,70 @@
   closeModalBtn.addEventListener('click', closeModal);
   window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
 
-  document.getElementById('bookingForm').addEventListener('submit', (e) => {
+  // Handle form submit
+  document.getElementById('bookingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    
     const name = document.getElementById('fullname').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('serviceSelect').value;
     const date = document.getElementById('datePick').value;
-    if(!name || !phone || !date) return alert('Isi semua data!');
-    alert(`Terima kasih ${name}! Booking ${service} tgl ${date} akan dikonfirmasi via WA ${phone} ke nomor 0857-1979-2747`);
-    e.target.reset();
-    closeModal();
+    
+    // Validasi
+    if(!name) {
+      alert('❌ Nama lengkap harus diisi!');
+      return;
+    }
+    if(!phone || phone.length < 10) {
+      alert('❌ Nomor WhatsApp harus diisi minimal 10 digit!');
+      return;
+    }
+    if(!service) {
+      alert('❌ Pilih layanan yang diinginkan!');
+      return;
+    }
+    if(!date) {
+      alert('❌ Pilih tanggal booking!');
+      return;
+    }
+    
+    // Nonaktifkan tombol submit sementara
+    const submitBtn = document.getElementById('submitBookingBtn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="loading-spinner"></span> Mengirim...';
+    submitBtn.disabled = true;
+    
+    const formData = { fullname: name, phone: phone, service: service, date: date };
+    
+    try {
+      // 1. Kirim ke Google Form (data tersimpan di spreadsheet)
+      await submitToGoogleForm(formData);
+      
+      // 2. Kirim notifikasi WA ke admin (0857-1979-2747)
+      const adminMessage = getWAAdminMessage(formData);
+      window.open(`https://wa.me/6285719792747?text=${adminMessage}`, '_blank');
+      
+      // 3. Kirim konfirmasi WA ke pasien (opsional, buka tab baru)
+      const pasienMessage = getWAPasienMessage(formData);
+      // Tanyakan apakah ingin membuka WA untuk konfirmasi ke pasien
+      if(confirm(`✅ Booking berhasil terkirim!\n\nApakah Anda ingin mengirim konfirmasi WhatsApp ke ${phone}?\n\nKlik OK untuk mengirim, CANCEL untuk melewati.`)) {
+        window.open(`https://wa.me/${phone}?text=${pasienMessage}`, '_blank');
+      }
+      
+      alert(`✅ Terima kasih ${name}!\n\nBooking Anda telah tercatat di sistem kami.\nAdmin akan segera menghubungi Anda via WhatsApp untuk konfirmasi.\n\nNomor yang akan menghubungi: 0857-1979-2747`);
+      
+      // Reset form
+      e.target.reset();
+      closeModal();
+      
+    } catch (error) {
+      alert('⚠️ Terjadi kesalahan. Silakan coba lagi atau hubungi admin via WhatsApp.');
+      console.error(error);
+    } finally {
+      // Aktifkan kembali tombol submit
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   });
 
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
