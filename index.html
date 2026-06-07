@@ -113,12 +113,15 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
-    .logo img {
-      height: 50px;
+    /* LOGO PNG di NAVBAR - logo.png */
+    .logo-img-nav {
+      height: 55px;
       width: auto;
       object-fit: contain;
+      border-radius: 12px;
     }
 
     .logo-text {
@@ -141,8 +144,8 @@
     }
 
     @media (min-width: 480px) {
-      .logo img {
-        height: 55px;
+      .logo-img-nav {
+        height: 60px;
       }
       .logo-text .name {
         font-size: 1.4rem;
@@ -313,6 +316,7 @@
       margin-bottom: 28px;
     }
 
+    /* HERO IMAGE menggunakan logo2.png (gambar promo) */
     .hero-image img {
       max-width: 100%;
       border-radius: 28px;
@@ -388,6 +392,15 @@
       margin: 40px auto 60px;
       padding: 48px 24px;
       text-align: center;
+    }
+
+    .btn-cta {
+      background: white;
+      color: #0f2b3d;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
     }
 
     footer {
@@ -481,16 +494,17 @@
 </head>
 <body>
 
-<!-- Navbar dengan logo2.png -->
+<!-- Navbar dengan LOGO.PNG di atas (navbar) -->
 <nav class="navbar">
   <div class="container nav-flex">
-    <div class="logo">
-      <img src="logo2.png" alt="Baitussayam Dental Care Logo" onerror="this.style.display='none';">
+    <a href="#" class="logo">
+      <!-- logo.png di navbar - ganti file logo Anda di sini -->
+      <img src="logo.png" alt="Baitussayam Dental Care Logo" class="logo-img-nav" onerror="this.src='https://placehold.co/60x60/0f2b3d/white?text=BDC'">
       <div class="logo-text">
         <span class="name">Baitussayam</span>
         <span class="care">DENTAL CARE</span>
       </div>
-    </div>
+    </a>
     <div class="nav-links">
       <a href="#home">Beranda</a>
       <a href="#services">Layanan</a>
@@ -499,7 +513,7 @@
       <button class="btn btn-primary" id="openModalBtnDesktop">Booking</button>
     </div>
     <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <i class="fas fa-ellipsis-h"></i>
+      <i class="fas fa-bars"></i>
     </button>
   </div>
 </nav>
@@ -519,7 +533,7 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section dengan gambar promo di samping teks Senyum Sehat -->
+<!-- Hero Section dengan LOGO2.PNG (gambar promo di samping teks) -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -530,7 +544,8 @@
       <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
     <div class="hero-image">
-      <img src="1000482326.jpg" alt="Promo Baitussayam Dental Care - FREE Konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000">
+      <!-- logo2.png di bagian body (hero image) - gambar promo -->
+      <img src="logo2.png" alt="Promo Baitussayam Dental Care - FREE Konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000" onerror="this.src='https://placehold.co/600x500/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
     </div>
   </div>
 </section>
@@ -591,7 +606,7 @@
   <div class="cta-section">
     <h2>Siap untuk Senyum Sehat?</h2>
     <p>Dapatkan FREE konsultasi & harga spesial untuk pendaftar pertama!</p>
-    <button class="btn btn-cta" id="ctaBookBtn" style="background:white; color:#0f2b3d;"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
+    <button class="btn btn-cta" id="ctaBookBtn"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
   </div>
 </section>
 
@@ -637,7 +652,14 @@
   overlay.addEventListener('click', closeDrawer);
 
   document.querySelectorAll('.drawer-links a').forEach(link => {
-    link.addEventListener('click', (e) => { closeDrawer(); const id = link.getAttribute('href'); if(id && id!='#'){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); } });
+    link.addEventListener('click', (e) => { 
+      closeDrawer(); 
+      const id = link.getAttribute('href'); 
+      if(id && id !== '#'){ 
+        e.preventDefault(); 
+        document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); 
+      } 
+    });
   });
 
   const modal = document.getElementById('bookingModal');
@@ -662,7 +684,11 @@
   });
 
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e){ e.preventDefault(); const id=this.getAttribute('href'); if(id && id!='#') document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); });
+    a.addEventListener('click', function(e){ 
+      e.preventDefault(); 
+      const id = this.getAttribute('href'); 
+      if(id && id !== '#') document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); 
+    });
   });
 </script>
 </body>
