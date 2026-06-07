@@ -116,7 +116,6 @@
       text-decoration: none;
     }
 
-    /* LOGO PNG di NAVBAR - logo.png */
     .logo-img-nav {
       height: 55px;
       width: auto;
@@ -260,7 +259,7 @@
 
     /* Hero dengan gambar promo di samping */
     .hero {
-      padding: 40px 0 60px;
+      padding: 40px 0 40px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
     }
 
@@ -316,13 +315,176 @@
       margin-bottom: 28px;
     }
 
-    /* HERO IMAGE menggunakan logo2.png (gambar promo) */
     .hero-image img {
       max-width: 100%;
       border-radius: 28px;
       box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
       width: 100%;
       height: auto;
+    }
+
+    /* ========== BANNER PROMO HARGA BARU ========== */
+    .promo-banner {
+      background: linear-gradient(135deg, #0f2b3d 0%, #1a5a4a 100%);
+      margin: 20px auto 0;
+      padding: 0;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px -12px rgba(0,0,0,0.2);
+    }
+
+    .promo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .promo-left {
+      flex: 1.2;
+      padding: 32px 28px;
+      color: white;
+      background: linear-gradient(120deg, #0f2b3d 0%, #144e41 100%);
+    }
+
+    .promo-badge {
+      display: inline-block;
+      background: #ffd700;
+      color: #0f2b3d;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .promo-left h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .promo-left h3 span {
+      color: #ffd700;
+      font-size: 2rem;
+    }
+
+    .promo-desc {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .promo-timer {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .timer-box {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      border-radius: 16px;
+      padding: 10px 16px;
+      text-align: center;
+      min-width: 70px;
+    }
+
+    .timer-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .timer-label {
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .promo-right {
+      flex: 2;
+      background: white;
+      padding: 24px 28px;
+    }
+
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .price-item {
+      text-align: center;
+      padding: 16px 12px;
+      background: #f8fafc;
+      border-radius: 20px;
+      transition: 0.2s;
+    }
+
+    .price-item:hover {
+      transform: translateY(-3px);
+      background: #eef2f6;
+    }
+
+    .price-icon {
+      font-size: 2rem;
+      color: #2b7a62;
+      margin-bottom: 8px;
+    }
+
+    .price-service {
+      font-weight: 700;
+      color: #1a2c3e;
+      margin-bottom: 8px;
+    }
+
+    .price-old {
+      font-size: 0.8rem;
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+
+    .price-new {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f2b3d;
+    }
+
+    .price-new small {
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+
+    .price-save {
+      background: #ffd700;
+      color: #0f2b3d;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .promo-btn {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .promo-grid {
+        flex-direction: column;
+      }
+      .promo-left {
+        text-align: center;
+      }
+      .promo-timer {
+        justify-content: center;
+      }
+      .promo-left h3 {
+        font-size: 1.4rem;
+      }
     }
 
     /* services */
@@ -494,11 +656,10 @@
 </head>
 <body>
 
-<!-- Navbar dengan LOGO.PNG di atas (navbar) -->
+<!-- Navbar dengan LOGO.PNG -->
 <nav class="navbar">
   <div class="container nav-flex">
     <a href="#" class="logo">
-      <!-- logo.png di navbar - ganti file logo Anda di sini -->
       <img src="logo.png" alt="Baitussayam Dental Care Logo" class="logo-img-nav" onerror="this.src='https://placehold.co/60x60/0f2b3d/white?text=BDC'">
       <div class="logo-text">
         <span class="name">Baitussayam</span>
@@ -533,7 +694,7 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section dengan LOGO2.PNG (gambar promo di samping teks) -->
+<!-- Hero Section -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -544,11 +705,66 @@
       <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
     <div class="hero-image">
-      <!-- logo2.png di bagian body (hero image) - gambar promo -->
-      <img src="logo2.png" alt="Promo Baitussayam Dental Care - FREE Konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000" onerror="this.src='https://placehold.co/600x500/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
+      <img src="logo2.png" alt="Promo Baitussayam Dental Care" onerror="this.src='https://placehold.co/600x500/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
     </div>
   </div>
 </section>
+
+<!-- ========== BANNER PROMO HARGA BARU ========== -->
+<div class="container">
+  <div class="promo-banner">
+    <div class="promo-grid">
+      <div class="promo-left">
+        <div class="promo-badge">
+          <i class="fas fa-fire"></i> FLASH SALE
+        </div>
+        <h3>Diskon <span>up to 40%</span></h3>
+        <p class="promo-desc">Perawatan gigi berkualitas dengan harga spesial. Promo terbatas! Dapatkan gratis konsultasi untuk 50 pendaftar pertama.</p>
+        <div class="promo-timer" id="countdownTimer">
+          <div class="timer-box"><div class="timer-number" id="days">00</div><div class="timer-label">Hari</div></div>
+          <div class="timer-box"><div class="timer-number" id="hours">00</div><div class="timer-label">Jam</div></div>
+          <div class="timer-box"><div class="timer-number" id="minutes">00</div><div class="timer-label">Menit</div></div>
+          <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">Detik</div></div>
+        </div>
+      </div>
+      <div class="promo-right">
+        <div class="price-list">
+          <div class="price-item">
+            <div class="price-icon"><i class="fas fa-brush"></i></div>
+            <div class="price-service">Scaling + Polish</div>
+            <div class="price-old">Rp250.000</div>
+            <div class="price-new">Rp149.000 <small>/pasien</small></div>
+            <div class="price-save">HEMAT 40%</div>
+          </div>
+          <div class="price-item">
+            <div class="price-icon"><i class="fas fa-fill-drip"></i></div>
+            <div class="price-service">Penambalan Gigi</div>
+            <div class="price-old">Rp220.000</div>
+            <div class="price-new">Rp150.000 <small>/gigi</small></div>
+            <div class="price-save">HEMAT 32%</div>
+          </div>
+          <div class="price-item">
+            <div class="price-icon"><i class="fas fa-tooth"></i></div>
+            <div class="price-service">Cabut Gigi Susu</div>
+            <div class="price-old">Rp180.000</div>
+            <div class="price-new">Rp120.000 <small>/anak</small></div>
+            <div class="price-save">HEMAT 33%</div>
+          </div>
+          <div class="price-item">
+            <div class="price-icon"><i class="fas fa-smile"></i></div>
+            <div class="price-service">Konsultasi Dokter</div>
+            <div class="price-old">Rp100.000</div>
+            <div class="price-new">GRATIS <small>/pertama</small></div>
+            <div class="price-save">SAVE 100%</div>
+          </div>
+        </div>
+        <div class="promo-btn">
+          <button class="btn btn-primary" id="promoBookBtn"><i class="fas fa-gift"></i> Klaim Promo Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Services Section -->
 <section class="section" id="services">
@@ -639,6 +855,42 @@
 </div>
 
 <script>
+  // Countdown Timer (7 hari dari sekarang)
+  function startCountdown() {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 7);
+    targetDate.setHours(23, 59, 59, 999);
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (86400000)) / (3600000));
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
+  startCountdown();
+
+  // Mobile drawer
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
@@ -662,8 +914,9 @@
     });
   });
 
+  // Modal
   const modal = document.getElementById('bookingModal');
-  const openModalBtns = document.querySelectorAll('#openModalBtnDesktop, #openModalBtnMobile, #heroBookBtn, #ctaBookBtn');
+  const openModalBtns = document.querySelectorAll('#openModalBtnDesktop, #openModalBtnMobile, #heroBookBtn, #ctaBookBtn, #promoBookBtn');
   const closeModalBtn = document.getElementById('closeModalBtn');
   function openModal() { modal.style.display = 'flex'; closeDrawer(); }
   function closeModal() { modal.style.display = 'none'; }
