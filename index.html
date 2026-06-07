@@ -674,7 +674,7 @@
     }
 
     .address-card p {
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       font-size: 1rem;
     }
 
@@ -982,7 +982,7 @@
   </div>
 </section>
 
-<!-- Location Section with Google Maps -->
+<!-- Location Section with Google Maps - ALAMAT TELAH DIPERBAIKI -->
 <section class="section map-section" id="location">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
@@ -990,19 +990,30 @@
       <p>Kunjungi kami di alamat berikut</p>
     </div>
     <div class="address-card">
-      <p><i class="fas fa-location-dot"></i> <strong>Jl. Sunan Kalijaga 4 No Blok M3/16</strong></p>
-      <p>Villa Gading Harapan, Babelan, Kabupaten Bekasi</p>
-      <a href="https://maps.google.com/?q=Jl.+Sunan+Kalijaga+4+Blok+M3%2F16+Villa+Gading+Harapan+Babelan+Bekasi" target="_blank" class="btn btn-map" style="margin-top: 8px;">
-        <i class="fas fa-directions"></i> Buka di Google Maps
-      </a>
+      <p><i class="fas fa-location-dot"></i> <strong>Jl. Sunan Kalijaga IV No.11A Blok M4</strong></p>
+      <p>RT.007/36, Bahagia, Kec. Babelan, Bekasi Utara</p>
+      <p>Jawa Barat 17610</p>
+      <div style="margin-top: 16px;">
+        <a href="https://maps.google.com/?q=Jl.+Sunan+Kalijaga+IV+No.11A+Blok+M4,+Bahagia,+Babelan,+Bekasi+Utara+17610" target="_blank" class="btn btn-map" style="margin-right: 8px;">
+          <i class="fas fa-directions"></i> Buka Google Maps
+        </a>
+        <a href="https://wa.me/6285719792747?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20lokasi%20klinik%20Baitussayam%20Dental%20Care" target="_blank" class="btn btn-wa">
+          <i class="fab fa-whatsapp"></i> Tanya Lokasi via WA
+        </a>
+      </div>
     </div>
     <div class="map-container">
+      <!-- Google Maps Embed dengan alamat lengkap sebagai query -->
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.858021645004!2d107.031218!3d-6.287162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b3b6f7b6b6b%3A0x0!2zNsKwMTcnMTMuOCJTIDEwN8KwMDEnNTIuNCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Jl.+Sunan+Kalijaga+IV+No.11A+Blok+M4,+Bahagia,+Babelan,+Bekasi+Utara+17610&language=id"
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
+    </div>
+    <div style="margin-top: 20px; padding: 16px; background: #e0f0ea; border-radius: 20px; text-align: center;">
+      <p style="margin-bottom: 8px;"><strong>📱 Butuh bantuan menemukan lokasi?</strong></p>
+      <p>Klik tombol "Tanya Lokasi via WA" di atas atau hubungi <strong>0857-1979-2747</strong></p>
     </div>
   </div>
 </section>
@@ -1037,8 +1048,8 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4>
-        <p><i class="fas fa-map-marker-alt"></i> Jl. Sunan Kalijaga 4 Blok M3/16</p>
-        <p>Villa Gading Harapan, Babelan, Bekasi</p>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Sunan Kalijaga IV No.11A Blok M4</p>
+        <p>RT.007/36, Bahagia, Babelan, Bekasi Utara 17610</p>
         <p><i class="fas fa-phone"></i> 0857-1979-2747</p>
       </div>
       <div class="footer-col">
@@ -1126,7 +1137,9 @@
 *No. WhatsApp:* ${data.phone}%0A
 *Layanan:* ${data.service}%0A
 *Tanggal Booking:* ${data.date}%0A%0A
-*Alamat Klinik:* Jl. Sunan Kalijaga 4 Blok M3/16, Villa Gading Harapan, Babelan, Bekasi%0A%0A
+*Alamat Klinik:*%0A
+Jl. Sunan Kalijaga IV No.11A Blok M4%0A
+RT.007/36, Bahagia, Babelan, Bekasi Utara 17610%0A%0A
 _Silakan konfirmasi ke pasien._`;
   }
   
@@ -1137,8 +1150,8 @@ Berikut detail booking Anda:%0A
 📋 Layanan: ${data.service}%0A
 📅 Tanggal: ${data.date}%0A%0A
 📍 Alamat Klinik:%0A
-Jl. Sunan Kalijaga 4 Blok M3/16%0A
-Villa Gading Harapan, Babelan, Bekasi%0A%0A
+Jl. Sunan Kalijaga IV No.11A Blok M4%0A
+RT.007/36, Bahagia, Babelan, Bekasi Utara 17610%0A%0A
 Booking Anda akan segera kami konfirmasi maksimal 1x24 jam.%0A%0A
 Jika ada perubahan jadwal, silakan hubungi kami.%0A%0A
 *0857-1979-2747*%0A%0A
