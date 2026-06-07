@@ -323,7 +323,7 @@
       height: auto;
     }
 
-    /* ========== BANNER PROMO HARGA BARU ========== */
+    /* ========== BANNER PROMO HARGA ========== */
     .promo-banner {
       background: linear-gradient(135deg, #0f2b3d 0%, #1a5a4a 100%);
       margin: 20px auto 0;
@@ -437,6 +437,7 @@
       font-weight: 700;
       color: #1a2c3e;
       margin-bottom: 8px;
+      font-size: 0.85rem;
     }
 
     .price-old {
@@ -710,7 +711,7 @@
   </div>
 </section>
 
-<!-- ========== BANNER PROMO HARGA BARU ========== -->
+<!-- ========== BANNER PROMO HARGA ========== -->
 <div class="container">
   <div class="promo-banner">
     <div class="promo-grid">
@@ -751,8 +752,8 @@
             <div class="price-save">HEMAT 33%</div>
           </div>
           <div class="price-item">
-            <div class="price-icon"><i class="fas fa-smile"></i></div>
-            <div class="price-service">Konsultasi Dokter</div>
+            <div class="price-icon"><i class="fas fa-user-md"></i></div>
+            <div class="price-service">Konsultasi dengan dokter gigi<br>dan terapis gigi mulut profesional</div>
             <div class="price-old">Rp100.000</div>
             <div class="price-new">GRATIS <small>/pertama</small></div>
             <div class="price-save">SAVE 100%</div>
@@ -777,7 +778,7 @@
       <div class="service-card"><div class="service-icon"><i class="fas fa-brush"></i></div><h3>Scaling & Polish</h3><p>Bersihkan karang gigi dengan teknologi ultrasonic.</p><div class="service-price">Rp149.000</div></div>
       <div class="service-card"><div class="service-icon"><i class="fas fa-fill-drip"></i></div><h3>Penambalan Gigi</h3><p>Tambal gigi berlubang dengan bahan berkualitas.</p><div class="service-price">Rp150.000</div></div>
       <div class="service-card"><div class="service-icon"><i class="fas fa-tooth"></i></div><h3>Cabut Gigi Susu</h3><p>Proses cepat, aman & nyaman untuk anak.</p><div class="service-price">Rp120.000</div></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i></div><h3>Konsultasi Gratis</h3><p>Konsultasi dengan dokter gigi spesialis.</p><div class="service-price">FREE</div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-user-md"></i></div><h3>Konsultasi dengan dokter gigi<br>dan terapis gigi mulut profesional</h3><p>Dapatkan konsultasi gratis pertama kali bersama tenaga ahli berpengalaman.</p><div class="service-price">GRATIS</div></div>
     </div>
   </div>
 </section>
@@ -789,7 +790,7 @@
       <h2>Yayasan Baitussayam Mulya Bekasi</h2>
       <p>Klinik gigi terpercaya di Bekasi dengan pelayanan ramah, harga bersahabat, dan teknologi modern. Kami berkomitmen memberikan perawatan gigi terbaik untuk seluruh keluarga.</p>
       <ul class="feature-list">
-        <li><i class="fas fa-check-circle"></i> FREE konsultasi pertama</li>
+        <li><i class="fas fa-check-circle"></i> FREE konsultasi pertama dengan dokter gigi & terapis profesional</li>
         <li><i class="fas fa-check-circle"></i> Harga terjangkau & transparan</li>
         <li><i class="fas fa-check-circle"></i> Dokter gigi berpengalaman</li>
         <li><i class="fas fa-check-circle"></i> Alat steril & ruangan nyaman</li>
@@ -821,7 +822,7 @@
 <section class="container">
   <div class="cta-section">
     <h2>Siap untuk Senyum Sehat?</h2>
-    <p>Dapatkan FREE konsultasi & harga spesial untuk pendaftar pertama!</p>
+    <p>Dapatkan FREE konsultasi dengan dokter gigi dan terapis profesional & harga spesial untuk pendaftar pertama!</p>
     <button class="btn btn-cta" id="ctaBookBtn"><i class="fas fa-calendar-alt"></i> Booking Janji Sekarang</button>
   </div>
 </section>
@@ -847,7 +848,12 @@
     <form id="bookingForm">
       <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
       <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
-      <div class="form-group"><select id="serviceSelect"><option value="Konsultasi Gratis">Konsultasi Gratis</option><option value="Scaling Rp149.000">Scaling Rp149.000</option><option value="Penambalan Gigi Rp150.000">Penambalan Gigi Rp150.000</option><option value="Cabut Gigi Susu Rp120.000">Cabut Gigi Susu Rp120.000</option></select></div>
+      <div class="form-group"><select id="serviceSelect">
+        <option value="Konsultasi Gratis dengan dokter gigi & terapis">Konsultasi Gratis dengan dokter gigi & terapis</option>
+        <option value="Scaling Rp149.000">Scaling Rp149.000</option>
+        <option value="Penambalan Gigi Rp150.000">Penambalan Gigi Rp150.000</option>
+        <option value="Cabut Gigi Susu Rp120.000">Cabut Gigi Susu Rp120.000</option>
+      </select></div>
       <div class="form-group"><input type="date" id="datePick" required></div>
       <button type="submit" class="btn btn-primary" style="width:100%;">Kirim Booking</button>
     </form>
