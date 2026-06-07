@@ -473,55 +473,78 @@
       text-align: center;
     }
 
-    /* ========== GALERI GAMBAR (di bawah tombol promo) ========== */
-    .partner-gallery {
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 2px dashed #e2e8f0;
+    /* ========== SECTION BANNER GAMBAR PROMO (BARIS KHUSUS) ========== */
+    .promo-images-section {
+      margin: 30px auto 20px;
+    }
+
+    .promo-images-title {
       text-align: center;
+      margin-bottom: 24px;
     }
 
-    .partner-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #2b7a62;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
+    .promo-images-title h3 {
+      font-size: 1.5rem;
+      color: #0f2b3d;
+      display: inline-block;
+      background: linear-gradient(135deg, #0f2b3d, #1a5a4a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .partner-logos {
+    .promo-images-title p {
+      color: #5a6e7c;
+      font-size: 0.9rem;
+    }
+
+    .promo-banner-grid {
       display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
       justify-content: center;
       align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
     }
 
-    .partner-logos img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
+    .promo-banner-card {
+      flex: 1;
+      min-width: 280px;
       background: white;
-      border-radius: 20px;
-      padding: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-      border: 1px solid #ecf3f0;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .partner-logos img:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      border-color: #2b7a62;
+    .promo-banner-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
-    @media (max-width: 600px) {
-      .partner-logos img {
-        width: 75px;
-        height: 75px;
-        padding: 8px;
-      }
+    .promo-banner-card img {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .promo-banner-caption {
+      padding: 16px;
+      text-align: center;
+      background: white;
+    }
+
+    .promo-banner-caption h4 {
+      color: #0f2b3d;
+      margin-bottom: 5px;
+    }
+
+    .promo-banner-caption p {
+      color: #2b7a62;
+      font-weight: 600;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 900px) {
@@ -536,6 +559,9 @@
       }
       .promo-left h3 {
         font-size: 1.4rem;
+      }
+      .promo-banner-card {
+        min-width: 100%;
       }
     }
 
@@ -762,7 +788,7 @@
   </div>
 </section>
 
-<!-- ========== BANNER PROMO HARGA dengan GALERI DI BAWAH TOMBOL ========== -->
+<!-- ========== BANNER PROMO HARGA (Flash Sale) ========== -->
 <div class="container">
   <div class="promo-banner">
     <div class="promo-grid">
@@ -813,18 +839,37 @@
         <div class="promo-btn">
           <button class="btn btn-primary" id="promoBookBtn"><i class="fas fa-gift"></i> Klaim Promo Sekarang</button>
         </div>
-        
-        <!-- GALERI GAMBAR (di bawah tombol, background putih lebih bersih) -->
-        <div class="partner-gallery">
-          <div class="partner-title">
-            <i class="fas fa-certificate"></i> MITRA & SERTIFIKASI KAMI
-          </div>
-          <div class="partner-logos">
-            <img src="logo3.png" alt="Mitra 1" onerror="this.src='https://placehold.co/100x100/0f2b3d/white?text=Logo+3'">
-            <img src="logo4.png" alt="Mitra 2" onerror="this.src='https://placehold.co/100x100/0f2b3d/white?text=Logo+4'">
-            <img src="logo5.png" alt="Mitra 3" onerror="this.src='https://placehold.co/100x100/0f2b3d/white?text=Logo+5'">
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SECTION KHUSUS GAMBAR PROMOSI (BESAR) ========== -->
+<div class="container promo-images-section">
+  <div class="promo-images-title">
+    <h3><i class="fas fa-tags"></i> PROMO SPESIAL LAINNYA</h3>
+    <p>Dapatkan penawaran menarik lainnya di Baitussayam Dental Care</p>
+  </div>
+  <div class="promo-banner-grid">
+    <div class="promo-banner-card">
+      <img src="logo3.png" alt="Promo Spesial 1" onerror="this.src='https://placehold.co/600x400/0f2b3d/white?text=Promo+1'">
+      <div class="promo-banner-caption">
+        <h4>Paket Keluarga</h4>
+        <p>Diskon 20% untuk 3 member</p>
+      </div>
+    </div>
+    <div class="promo-banner-card">
+      <img src="logo4.png" alt="Promo Spesial 2" onerror="this.src='https://placehold.co/600x400/0f2b3d/white?text=Promo+2'">
+      <div class="promo-banner-caption">
+        <h4>Member Card</h4>
+        <p>Free scaling setahun</p>
+      </div>
+    </div>
+    <div class="promo-banner-card">
+      <img src="logo5.png" alt="Promo Spesial 3" onerror="this.src='https://placehold.co/600x400/0f2b3d/white?text=Promo+3'">
+      <div class="promo-banner-caption">
+        <h4>Rabat Khusus</h4>
+        <p>Untuk lansia & anak-anak</p>
       </div>
     </div>
   </div>
