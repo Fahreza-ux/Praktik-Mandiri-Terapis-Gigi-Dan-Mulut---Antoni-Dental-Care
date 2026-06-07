@@ -90,6 +90,16 @@
       transform: translateY(-2px);
     }
 
+    .btn-map {
+      background: #4285F4;
+      color: white;
+    }
+
+    .btn-map:hover {
+      background: #3367D6;
+      transform: translateY(-2px);
+    }
+
     /* navbar */
     .navbar {
       position: sticky;
@@ -631,6 +641,43 @@
       gap: 12px;
     }
 
+    /* Map Section */
+    .map-section {
+      background: #f1f5f9;
+    }
+
+    .map-container {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .address-card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      margin-top: 24px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .address-card i {
+      color: #2b7a62;
+      margin-right: 8px;
+    }
+
+    .address-card p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
     .cta-section {
       background: #0f2b3d;
       color: white;
@@ -770,6 +817,7 @@
       <a href="#home">Beranda</a>
       <a href="#services">Layanan</a>
       <a href="#about">Tentang</a>
+      <a href="#location">Lokasi</a>
       <a href="#testimonials">Testimoni</a>
       <button class="btn btn-primary" id="openModalBtnDesktop">Booking</button>
     </div>
@@ -788,6 +836,7 @@
     <a href="#home">Beranda</a>
     <a href="#services">Layanan</a>
     <a href="#about">Tentang</a>
+    <a href="#location">Lokasi</a>
     <a href="#testimonials">Testimoni</a>
     <button class="btn btn-primary drawer-btn" id="openModalBtnMobile">Booking Online</button>
   </div>
@@ -933,6 +982,31 @@
   </div>
 </section>
 
+<!-- Location Section with Google Maps -->
+<section class="section map-section" id="location">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <h2><i class="fas fa-map-marker-alt"></i> Lokasi Klinik</h2>
+      <p>Kunjungi kami di alamat berikut</p>
+    </div>
+    <div class="address-card">
+      <p><i class="fas fa-location-dot"></i> <strong>Jl. Sunan Kalijaga 4 No Blok M3/16</strong></p>
+      <p>Villa Gading Harapan, Babelan, Kabupaten Bekasi</p>
+      <a href="https://maps.google.com/?q=Jl.+Sunan+Kalijaga+4+Blok+M3%2F16+Villa+Gading+Harapan+Babelan+Bekasi" target="_blank" class="btn btn-map" style="margin-top: 8px;">
+        <i class="fas fa-directions"></i> Buka di Google Maps
+      </a>
+    </div>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.858021645004!2d107.031218!3d-6.287162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b3b6f7b6b6b%3A0x0!2zNsKwMTcnMTMuOCJTIDEwN8KwMDEnNTIuNCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <!-- Testimonials -->
 <section class="section" id="testimonials">
   <div class="container">
@@ -961,9 +1035,25 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Yayasan Baitussayam Mulya, Bekasi</p><p><i class="fas fa-phone"></i> 0857-1979-2747</p></div>
-      <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu : 10:00 - 15:00</p></div>
-      <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-whatsapp"></i></div></div>
+      <div class="footer-col">
+        <h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Sunan Kalijaga 4 Blok M3/16</p>
+        <p>Villa Gading Harapan, Babelan, Bekasi</p>
+        <p><i class="fas fa-phone"></i> 0857-1979-2747</p>
+      </div>
+      <div class="footer-col">
+        <h4>Jam Operasional</h4>
+        <p>Senin - Sabtu : 09:00 - 20:00</p>
+        <p>Minggu : 10:00 - 15:00</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami</h4>
+        <div class="socials">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-whatsapp"></i>
+        </div>
+      </div>
     </div>
     <div class="copyright">© 2025 Baitussayam Dental Care — Perawatan Gigi Murah & Terpercaya</div>
   </div>
@@ -1006,18 +1096,13 @@
   // Google Form URL (action submit)
   const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd-fcvHc-GqJ9yU6abNh1IrybM_oL8aqm5uaqf5QBWGyPe2_A/formResponse';
   
-  // Mapping field Google Form (entry ID dari Google Form)
-  // Untuk mendapatkan entry ID: buka form di browser, inspect element pada input, cari name="entry.xxxxxxx"
-  // Atau menggunakan pendekatan: kirim data ke URL dengan parameter
-  
   // Fungsi submit ke Google Form
   async function submitToGoogleForm(formData) {
-    // Menggunakan metode fetch dengan mode no-cors (tetap mengirim meski tidak dapat response)
     const formBody = new URLSearchParams();
-    formBody.append('entry.1126856659', formData.fullname); // Nama Lengkap
-    formBody.append('entry.592604168', formData.phone);      // Nomor Handphone  
-    formBody.append('entry.809273581', formData.service);    // Pilihan Layanan
-    formBody.append('entry.1485964101', formData.date);      // Tanggal Booking
+    formBody.append('entry.1126856659', formData.fullname);
+    formBody.append('entry.592604168', formData.phone);
+    formBody.append('entry.809273581', formData.service);
+    formBody.append('entry.1485964101', formData.date);
     
     try {
       await fetch(GOOGLE_FORM_URL, {
@@ -1035,30 +1120,32 @@
     }
   }
   
-  // Format pesan WhatsApp untuk notifikasi ke admin
   function getWAAdminMessage(data) {
     return `*🦷 BOOKING BARU - BAITUSSAYAM DENTAL CARE*%0A%0A
 *Nama:* ${data.fullname}%0A
 *No. WhatsApp:* ${data.phone}%0A
 *Layanan:* ${data.service}%0A
 *Tanggal Booking:* ${data.date}%0A%0A
+*Alamat Klinik:* Jl. Sunan Kalijaga 4 Blok M3/16, Villa Gading Harapan, Babelan, Bekasi%0A%0A
 _Silakan konfirmasi ke pasien._`;
   }
   
-  // Format pesan WhatsApp untuk konfirmasi ke pasien
   function getWAPasienMessage(data) {
     return `Halo *${data.fullname}*,%0A%0A
 Terima kasih telah melakukan booking di *Baitussayam Dental Care*.%0A%0A
 Berikut detail booking Anda:%0A
 📋 Layanan: ${data.service}%0A
 📅 Tanggal: ${data.date}%0A%0A
+📍 Alamat Klinik:%0A
+Jl. Sunan Kalijaga 4 Blok M3/16%0A
+Villa Gading Harapan, Babelan, Bekasi%0A%0A
 Booking Anda akan segera kami konfirmasi maksimal 1x24 jam.%0A%0A
 Jika ada perubahan jadwal, silakan hubungi kami.%0A%0A
 *0857-1979-2747*%0A%0A
 Salam sehat, Baitussayam Dental Care 🦷`;
   }
   
-  // Countdown Timer (7 hari dari sekarang)
+  // Countdown Timer
   function startCountdown() {
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 7);
@@ -1136,7 +1223,6 @@ Salam sehat, Baitussayam Dental Care 🦷`;
     const service = document.getElementById('serviceSelect').value;
     const date = document.getElementById('datePick').value;
     
-    // Validasi
     if(!name) {
       alert('❌ Nama lengkap harus diisi!');
       return;
@@ -1154,7 +1240,6 @@ Salam sehat, Baitussayam Dental Care 🦷`;
       return;
     }
     
-    // Nonaktifkan tombol submit sementara
     const submitBtn = document.getElementById('submitBookingBtn');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<span class="loading-spinner"></span> Mengirim...';
@@ -1163,23 +1248,18 @@ Salam sehat, Baitussayam Dental Care 🦷`;
     const formData = { fullname: name, phone: phone, service: service, date: date };
     
     try {
-      // 1. Kirim ke Google Form (data tersimpan di spreadsheet)
       await submitToGoogleForm(formData);
       
-      // 2. Kirim notifikasi WA ke admin (0857-1979-2747)
       const adminMessage = getWAAdminMessage(formData);
       window.open(`https://wa.me/6285719792747?text=${adminMessage}`, '_blank');
       
-      // 3. Kirim konfirmasi WA ke pasien (opsional, buka tab baru)
       const pasienMessage = getWAPasienMessage(formData);
-      // Tanyakan apakah ingin membuka WA untuk konfirmasi ke pasien
       if(confirm(`✅ Booking berhasil terkirim!\n\nApakah Anda ingin mengirim konfirmasi WhatsApp ke ${phone}?\n\nKlik OK untuk mengirim, CANCEL untuk melewati.`)) {
         window.open(`https://wa.me/${phone}?text=${pasienMessage}`, '_blank');
       }
       
       alert(`✅ Terima kasih ${name}!\n\nBooking Anda telah tercatat di sistem kami.\nAdmin akan segera menghubungi Anda via WhatsApp untuk konfirmasi.\n\nNomor yang akan menghubungi: 0857-1979-2747`);
       
-      // Reset form
       e.target.reset();
       closeModal();
       
@@ -1187,7 +1267,6 @@ Salam sehat, Baitussayam Dental Care 🦷`;
       alert('⚠️ Terjadi kesalahan. Silakan coba lagi atau hubungi admin via WhatsApp.');
       console.error(error);
     } finally {
-      // Aktifkan kembali tombol submit
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
     }
