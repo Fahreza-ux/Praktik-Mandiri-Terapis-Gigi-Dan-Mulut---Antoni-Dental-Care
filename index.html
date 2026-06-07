@@ -257,7 +257,7 @@
       display: block;
     }
 
-    /* Hero dengan gambar promo di samping - RAPI DI KOMPUTER */
+    /* Hero Section - KEMBALI KE POSISI SEMULA */
     .hero {
       padding: 50px 0 60px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
@@ -273,16 +273,13 @@
       .hero-grid {
         flex-direction: row;
         align-items: center;
-        gap: 60px;
+        gap: 50px;
       }
       .hero-content {
         flex: 1;
       }
       .hero-image {
         flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
 
@@ -319,31 +316,23 @@
       margin-bottom: 28px;
     }
 
-    /* PERBAIKAN: Hero image dengan ukuran proporsional */
+    /* Hero image - ukuran proporsional */
     .hero-image {
       width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
+      text-align: center;
     }
 
     .hero-image img {
       width: 100%;
+      max-width: 480px;
       height: auto;
-      max-height: 450px;
-      object-fit: contain;
       border-radius: 28px;
       box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
-      background: white;
-      padding: 10px;
     }
 
     @media (min-width: 900px) {
-      .hero-image {
-        max-width: 550px;
-      }
       .hero-image img {
-        max-height: 480px;
-        padding: 15px;
+        max-width: 500px;
       }
     }
 
@@ -510,11 +499,6 @@
     .promo-images-title h3 {
       font-size: 1.5rem;
       color: #0f2b3d;
-      display: inline-block;
-      background: linear-gradient(135deg, #0f2b3d, #1a5a4a);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
     }
 
     .promo-images-title p {
@@ -538,7 +522,6 @@
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
     }
 
     .promo-banner-card:hover {
@@ -549,7 +532,7 @@
     .promo-banner-card img {
       width: 100%;
       height: auto;
-      min-height: 250px;
+      min-height: 220px;
       object-fit: cover;
       display: block;
     }
@@ -796,7 +779,7 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<!-- Hero Section dengan logo2.png - posisi rapi di komputer -->
+<!-- Hero Section -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -812,7 +795,7 @@
   </div>
 </section>
 
-<!-- ========== BANNER PROMO HARGA (Flash Sale) ========== -->
+<!-- BANNER PROMO HARGA (Flash Sale) -->
 <div class="container">
   <div class="promo-banner">
     <div class="promo-grid">
@@ -868,7 +851,7 @@
   </div>
 </div>
 
-<!-- ========== SECTION GAMBAR PROMOSI (logo3,4,5) ========== -->
+<!-- SECTION GAMBAR PROMOSI (logo3,4,5) -->
 <div class="container promo-images-section">
   <div class="promo-images-title">
     <h3><i class="fas fa-tags"></i> PROMO SPESIAL LAINNYA</h3>
