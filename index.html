@@ -257,7 +257,7 @@
       display: block;
     }
 
-    /* Hero Section - KEMBALI KE POSISI SEMULA */
+    /* Hero Section */
     .hero {
       padding: 50px 0 60px;
       background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
@@ -316,7 +316,6 @@
       margin-bottom: 28px;
     }
 
-    /* Hero image - ukuran proporsional */
     .hero-image {
       width: 100%;
       text-align: center;
@@ -787,7 +786,7 @@
       <h1>Senyum Sehat, <br><span>Perawatan Gigi Murah & Terpercaya!</span></h1>
       <p>Klinik gigi modern dengan harga terjangkau. FREE konsultasi, Scaling Rp149.000, Penambalan Rp150.000, Cabut Gigi Susu Rp120.000.</p>
       <button class="btn btn-primary" id="heroBookBtn"><i class="fas fa-calendar-check"></i> Booking Sekarang</button>
-      <a href="https://wa.me/6285792481951" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
+      <a href="https://wa.me/6285719792747" class="btn btn-wa" style="margin-left: 12px;"><i class="fab fa-whatsapp"></i> Chat WA</a>
     </div>
     <div class="hero-image">
       <img src="logo2.png" alt="Promo Baitussayam Dental Care" onerror="this.src='https://placehold.co/500x450/e0f0ea/0f2b3d?text=Promo+Gigi+Murah'">
@@ -910,7 +909,7 @@
         <li><i class="fas fa-check-circle"></i> Dokter gigi berpengalaman</li>
         <li><i class="fas fa-check-circle"></i> Alat steril & ruangan nyaman</li>
       </ul>
-      <a href="https://wa.me/6285792481951" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
+      <a href="https://wa.me/6285719792747" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
     </div>
     <div class="about-img">
       <img src="https://placehold.co/500x400/cbdcd3/ffffff?text=Klinik+Baitussayam" alt="Klinik Baitussayam" style="width:100%; border-radius:28px;">
@@ -946,7 +945,7 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Yayasan Baitussayam Mulya, Bekasi</p><p><i class="fas fa-phone"></i> 0857-9248-1951</p></div>
+      <div class="footer-col"><h4><i class="fas fa-tooth"></i> Baitussayam Dental Care</h4><p><i class="fas fa-map-marker-alt"></i> Yayasan Baitussayam Mulya, Bekasi</p><p><i class="fas fa-phone"></i> 0857-1979-2747</p></div>
       <div class="footer-col"><h4>Jam Operasional</h4><p>Senin - Sabtu : 09:00 - 20:00</p><p>Minggu : 10:00 - 15:00</p></div>
       <div class="footer-col"><h4>Ikuti Kami</h4><div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-whatsapp"></i></div></div>
     </div>
@@ -959,7 +958,7 @@
   <div class="modal-content">
     <span class="close-modal" id="closeModalBtn">&times;</span>
     <h3>Booking Kunjungan</h3>
-    <p style="margin-bottom:20px;">Isi data, tim kami akan hubungi via WA.</p>
+    <p style="margin-bottom:20px;">Isi data, tim kami akan hubungi via <strong>0857-1979-2747</strong></p>
     <form id="bookingForm">
       <div class="form-group"><input type="text" id="fullname" placeholder="Nama lengkap" required></div>
       <div class="form-group"><input type="tel" id="phone" placeholder="Nomor WhatsApp" required></div>
@@ -1052,7 +1051,7 @@
     const service = document.getElementById('serviceSelect').value;
     const date = document.getElementById('datePick').value;
     if(!name || !phone || !date) return alert('Isi semua data!');
-    alert(`Terima kasih ${name}! Booking ${service} tgl ${date} akan dikonfirmasi via WA ${phone}`);
+    alert(`Terima kasih ${name}! Booking ${service} tgl ${date} akan dikonfirmasi via WA ${phone} ke nomor 0857-1979-2747`);
     e.target.reset();
     closeModal();
   });
